@@ -1,0 +1,53 @@
+---
+const experience = [
+    {
+        numbers: "10",
+        type: "Años",
+        info: "de experiencia en el mercado peruano",
+    },
+    {
+        numbers: "17",
+        type: "Sitios",
+        info: "top en mineria, energia y petroleo",
+    },
+    {
+        numbers: "1.5 M",
+        type: "OTs",
+        info: "registradas en nuestra plataforma",
+    },
+    { numbers: "50+", type: "Consultas e", info: "informes pre configurados" },
+
+    {
+        numbers: "305+",
+        type: "Mil alertas",
+        info: "por correos electronicos enviados",
+    },
+    {
+        numbers: "185 M",
+        type: "Soles",
+        info: "en Materiales, Consumibles y Repuestos",
+    },
+    { numbers: "7.2 M", type: "HH", info: "reportados en OT" },
+    { numbers: "365", type: "Días", info: "de soporte al año" },
+];
+---
+
+<div class="container mx-auto h-[1020px] content-center pt-20 pb-48">
+    <!-- title -->
+    <div class="text-center mb-24">
+        <h2 class="text-4xl font-semibold">¡Nuestra experiencia!</h2>
+    </div>
+
+    <!-- grid de 4 - 2 filas -->
+    <div class="grid grid-cols-4 gap-10 ">
+        {
+            experience.map((item) => (
+                <div class="text-center content-center">
+                    <h2 class="text-7xl">{item.numbers}</h2>
+                    <span class="text-xl">{item.type}</span>
+                    <p class="text-sm uppercase">{item.info}</p>
+                </div>
+            ))
+        }
+    </div>
+</div>
