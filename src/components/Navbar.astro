@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import brasil from "../assets/brasil.png";
+import espania from "../assets/espania.png";
+import fmcamps from "../assets/logo_ft.png";
+
+const allPages = [
+    { text: "Sobre", url: "/about" },
+    { text: "Producto", url: "/product" },
+    { text: "Precio", url: "/price" },
+    { text: "Contact", url: "/contact" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div
+    class={currentPath == "/"
+        ? "fixed px-4 w-full flex mx-auto justify-between"
+        : "fixed px-4 w-full flex mx-auto justify-between bg-gray-900 text-white"}
+>
+    <a href="/" aria-label="Go to homepage">
+        <Image
+            src={fmcamps}
+            alt="logo fmcamps"
+            decoding="async"
+            loading="lazy"
+            width="310"
+            height="95"
+            class="cursor-pointer"
+        />
+    </a>
+    <div class="flex gap-x-10 items-center">
+        <a href="/">
+            <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+                ></path>
+            </svg>
+        </a>
+
+        {allPages.map((page) => <a href={page.url}>{page.text}</a>)}
+
+        <div class="flex gap-x-3">
+            <Image
+                src={brasil}
+                alt="cambiar idioam brasil"
+                decoding="async"
+                loading="lazy"
+                width="23"
+                height="17"
+                class="cursor-pointer"
+            />
+            <Image
+                src={espania}
+                alt="cambiar idioma españa"
+                decoding="async"
+                loading="lazy"
+                width="23"
+                height="17"
+                class="cursor-pointer"
+            />
+        </div>
+    </div>
+</div>

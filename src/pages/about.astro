@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+
+import aboutImage from "../assets/team-1-800x800.jpg";
+import aboutImage2 from "../assets/team-1-800x800_2.jpg";
+---
+
+<Layout title="Nosotros - FMCAMPS">
+  <Navbar />
+  <main class="max-w-7xl mx-auto pt-36 pb-14 px-4 text-black">
+    <!-- Texto de introducción centrado -->
+    <div class="max-w-2xl text-center mx-auto px-4 mb-24">
+      <p class="text-lg font-light leading-relaxed mt-6 mb-4">
+        Nuestro equipo cuenta con 10 años de experiencia en la industria de
+        Servicios On Site colaborando con la implementación de herramientas
+        digitales y la optimización de los procesos de nuestros clientes.
+      </p>
+    </div>
+
+    <!-- Sección de dos columnas con imágenes y textos -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="px-6">
+        <Image
+          src={aboutImage}
+          class="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
+          alt="image1"
+        />
+
+        <div class="pt-6 text-center">
+          <h6 class="text-xl font-serif font-bold leading-normal mt-0 mb-2">
+            Misión
+          </h6>
+          <p class="text-base font-light leading-relaxed mt-0 mb-4">
+            Somos una empresa joven peruana con la misión de llevar los
+            beneficios de la economía de la nube digital a las empresas con
+            requerimientos de gestión de servicios de Facilities Management y
+            Gestión de Activos.
+          </p>
+          {/* el otro div */}
+        </div>
+      </div>
+
+      <div class="px-6">
+        <Image
+          src={aboutImage2}
+          class="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
+          alt="image2"
+        />
+
+        <div class="pt-6 text-center">
+          <h6 class="text-xl font-serif font-bold leading-normal mt-0 mb-2">
+            Visión
+          </h6>
+          <p class="text-base font-light leading-relaxed mt-0 mb-4">
+            Ser la primera empresa de colaboración B2B especializada en brindar
+            servicios de software SaaS para FM en la industria minera peruana.
+          </p>
+          {/* el otro div */}
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<!-- <section class="h-screen max-w-7xl mx-auto px-4 pt-36 pb-14">
+    <div class="px-4">
+        {/* title */}
+        <div
+        class="flex flex-wrap justify-center text-center mb-24"
+        >
+            <div class="w-full lg:w-6/12 px-4">
+                <p
+                class="text-blue-gray-700 text-lg font-light leading-relaxed mt-6 mb-4"
+                >
+                    Nuestro equipo tiene 10 años de experiencia en la
+                    industria de Servicios On Site colaborando con la
+                    implementación de herramientas digitales.
+                </p>
+            </div>
+        </div>
+    </div>
+</section> -->
