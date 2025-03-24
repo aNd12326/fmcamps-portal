@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
@@ -23,10 +22,12 @@ import aboutImage2 from "../assets/team-1-800x800_2.jpg";
     <!-- Sección de dos columnas con imágenes y textos -->
     <div class="grid grid-cols-2 gap-4">
       <div class="px-6">
-        <Image
-          src={aboutImage}
+        <img
+          src={aboutImage.src}
           class="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
           alt="image1"
+          decoding="async"
+          loading="lazy"
         />
 
         <div class="pt-6 text-center">
@@ -44,10 +45,12 @@ import aboutImage2 from "../assets/team-1-800x800_2.jpg";
       </div>
 
       <div class="px-6">
-        <Image
-          src={aboutImage2}
+        <img
+          src={aboutImage2.src}
           class="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
           alt="image2"
+          decoding="async"
+          loading="lazy"
         />
 
         <div class="pt-6 text-center">

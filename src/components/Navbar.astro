@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import brasil from "../assets/brasil.png";
 import espania from "../assets/espania.png";
 import fmcamps from "../assets/logo_ft.png";
@@ -20,8 +19,8 @@ const currentPath = Astro.url.pathname;
         : "fixed px-4 w-full flex mx-auto justify-between bg-gray-900 text-white"}
 >
     <a href="/" aria-label="Go to homepage">
-        <Image
-            src={fmcamps}
+        <img
+            src={fmcamps.src}
             alt="logo fmcamps"
             decoding="async"
             loading="lazy"
@@ -54,8 +53,8 @@ const currentPath = Astro.url.pathname;
         {allPages.map((page) => <a href={page.url}>{page.text}</a>)}
 
         <div class="flex gap-x-3">
-            <Image
-                src={brasil}
+            <img
+                src={brasil.src}
                 alt="cambiar idioam brasil"
                 decoding="async"
                 loading="lazy"
@@ -63,8 +62,8 @@ const currentPath = Astro.url.pathname;
                 height="17"
                 class="cursor-pointer"
             />
-            <Image
-                src={espania}
+            <img
+                src={espania.src}
                 alt="cambiar idioma españa"
                 decoding="async"
                 loading="lazy"

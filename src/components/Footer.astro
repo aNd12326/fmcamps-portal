@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import fmcamps from "../assets/logo_ft.png";
 import Linkedln from "../icons/Linkedln.astro";
 import Facebook from "../icons/Facebook.astro";
@@ -10,7 +9,12 @@ import Github from "../icons/Github.astro";
     <div class="max-w-7xl mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8">
         <div>
             <div>
-                <Image src={fmcamps} alt="Logo FMCAMPS" />
+                <img
+                    src={fmcamps.src}
+                    alt="Logo FMCAMPS"
+                    decoding="async"
+                    loading="lazy"
+                />
             </div>
             <p class="py-4">
                 Haga seguimiento de sus servicios On Site en sus instalaciones o

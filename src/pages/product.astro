@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="Nuestro producto FMCAMPS">
@@ -16,12 +15,14 @@ import { Image } from "astro:assets";
                 class="box-border w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
                 <div>
-                    <Image
+                    <img
                         src="https://cdn.devdojo.com/images/december2020/productivity.png"
                         class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
                         alt="/"
                         width="376"
                         height="376"
+                        decoding="async"
+                        loading="lazy"
                     />
                 </div>
             </div>
@@ -134,12 +135,14 @@ import { Image } from "astro:assets";
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
-                <Image
+                <img
                     src="https://cdn.devdojo.com/images/december2020/settings.png"
                     class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32"
                     alt="/"
                     width="376"
                     height="376"
+                    decoding="async"
+                    loading="lazy"
                 />
             </div>
         </div>
@@ -152,12 +155,14 @@ import { Image } from "astro:assets";
             <div
                 class="box-bo.rder w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
-                <Image
+                <img
                     src="https://cdn.devdojo.com/images/december2020/productivity.png"
                     class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
                     alt="/"
                     width="376"
                     height="376"
+                    decoding="async"
+                    loading="lazy"
                 />
             </div>
 
@@ -270,12 +275,14 @@ import { Image } from "astro:assets";
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
-                <Image
+                <img
                     src="https://cdn.devdojo.com/images/december2020/settings.png"
                     class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32"
                     alt="/"
                     width="376"
                     height="376"
+                    decoding="async"
+                    loading="lazy"
                 />
             </div>
         </div>
