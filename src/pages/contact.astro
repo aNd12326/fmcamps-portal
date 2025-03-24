@@ -1,1 +1,20 @@
-<div>contact page</div>
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Contacto a FMCAMPS">
+    <Navbar />
+    <main>
+        <HeroSection
+            title="CONTACTANOS"
+            description="Estamos aqui para ayudarte con cualquier pregunta que tengas sobre nuestros servicios."
+        />
+        <ContactForm />
+    </main>
+    <Footer />
+</Layout>

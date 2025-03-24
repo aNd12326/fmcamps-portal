@@ -1,11 +1,16 @@
+---
+import { Image } from "astro:assets";
+import fmcamps from "../assets/logo_ft.png";
+import Linkedln from "../icons/Linkedln.astro";
+import Facebook from "../icons/Facebook.astro";
+import Github from "../icons/Github.astro";
+---
+
 <footer class="w-full bg-white dark:bg-gray-900 dark:text-gray-100">
     <div class="max-w-7xl mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8">
         <div>
-            {
-                /* <h1 className="w-full text-3xl font-bold text-[#00df9a]">FMCAMPS</h1> */
-            }
-            <div class="w-full text-3xl font-bold text-[#00df9a]">
-                <a>FMCAMPS LOGO</a>
+            <div>
+                <Image src={fmcamps} alt="Logo FMCAMPS" />
             </div>
             <p class="py-4">
                 Haga seguimiento de sus servicios On Site en sus instalaciones o
@@ -17,9 +22,28 @@
                     target="_blank"
                     rel="noreferrer"
                 >
-                    ICON 1
+                    <Linkedln
+                        class="w-6 h-6 cursor-pointer hover:text-gray-400 transition-colors"
+                    />
                 </a>
-                ICON2 ICON3
+                <a
+                    href="https://www.linkedin.com/company/fmcamps/?viewAsMember=true"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Facebook
+                        class="w-6 h-6 cursor-pointer hover:text-gray-400 transition-colors"
+                    />
+                </a>
+                <a
+                    href="https://www.linkedin.com/company/fmcamps/?viewAsMember=true"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Github
+                        class="w-6 h-6 cursor-pointer hover:text-gray-400 transition-colors"
+                    />
+                </a>
             </div>
         </div>
         <div
@@ -29,7 +53,7 @@
                 <h6 class="font-medium text-gray-400">Soporte</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a>Planes</a>
+                        <a class="cursor-pointer">Planes</a>
                     </li>
                 </ul>
             </div>
@@ -37,10 +61,10 @@
                 <h6 class="font-medium text-gray-400">Compañía</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a>Nosotros</a>
+                        <a class="cursor-pointer">Nosotros</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a>Contacto</a>
+                        <a class="cursor-pointer">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -48,13 +72,16 @@
                 <h6 class="font-medium text-gray-400">Legal</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a>Política de Cookies</a>
+                        <a class="cursor-pointer">Política de Cookies</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a>Política de Privacidad</a>
+                        <a class="cursor-pointer">Política de Privacidad</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a>Términos y Condiciones</a>
+                        <a class="cursor-pointer">Términos y Condiciones</a>
+                    </li>
+                    <li class="py-2 text-sm">
+                        <a class="cursor-pointer">Libro de Reclamaciones</a>
                     </li>
                 </ul>
             </div>
