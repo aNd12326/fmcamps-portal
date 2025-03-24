@@ -1,9 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <Layout title="Nuestro producto FMCAMPS">
-
+    <Navbar />
     <section class="w-full pt-36 pb-14">
         <div
             class="bg-white rounded-lg flex flex-row items-center content-center py-8 mx-auto leading-6 border-0 border-gray-300 border-solid max-w-7xl px-16"
@@ -285,5 +287,5 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </section>
-
+    <!-- <Footer /> -->
 </Layout>

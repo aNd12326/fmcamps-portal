@@ -1,0 +1,53 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+import brasil from "../assets/brasil.png";
+import espania from "../assets/espaniaOp.webp";
+import usa from "../assets/US.png";
+
+const flags = [{ img: espania.src }, { img: brasil.src }, { img: usa.src }];
+
+// Create a mapping of language codes to flag images
+const languageFlags = {
+    es: espania.src,
+    en: usa.src,
+    br: brasil.src,
+};
+
+// Object.entries(languages).map(([lang, label]) => console.log(lang, label));
+---
+
+<ul class="flex gap-x-3">
+    <!-- {
+        Object.entries(languages).map(([lang, label], index) => {
+            // Usamos el índice para obtener la bandera correspondiente
+            const flag = flags[index]; // El índice garantiza que las banderas se asocian correctamente con los idiomas
+            return (
+                <li>
+                    <a href={translatePath("/", lang)}>
+                        <img
+                            src={flag.img}
+                            alt={label}
+                            decoding="async"
+                            loading="lazy"
+                            width="23"
+                            height="17"
+                            class="cursor-pointer"
+                        />
+                    </a>
+                </li>
+            );
+        })
+    } -->
+    {
+        Object.entries(languages).map(([lang, label]) => (
+            <li>
+                <a href={translatePath("/", lang)}>{label}</a>
+            </li>
+        ))
+    }
+</ul>

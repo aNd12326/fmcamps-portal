@@ -1,7 +1,8 @@
 ---
 import brasil from "../assets/brasil.png";
 import espania from "../assets/espaniaOp.webp";
-import fmcamps from "../assets/logo_ft.png";
+import usa from "../assets/US.png";
+import fmcamps from "../assets/logo_ftOp.webp";
 
 const allPages = [
     { text: "Sobre", url: "/about" },
@@ -11,14 +12,40 @@ const allPages = [
 ];
 
 const currentPath = Astro.url.pathname;
+
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const urlSeparate = currentPath.split("");
+let pathToDirige = "";
+let i = 3;
+
+// for (i; i < urlSeparate.length; i++) {
+//     console.log(urlSeparate[i]);
+//     pathToDirige += urlSeparate[i];
+// }
+
+// console.log(pathToDirige);
 ---
 
 <div
-    class={currentPath == "/"
+    class={currentPath == `/${lang}`
         ? "fixed px-4 w-full flex mx-auto justify-between"
         : "fixed px-4 w-full flex mx-auto justify-between bg-gray-900 text-white"}
 >
-    <a href="/" aria-label="Go to homepage" data-astro-prefetch>
+    <a
+        href={translatePath("/")}
+        aria-label="Go to homepage"
+        data-astro-prefetch
+    >
         <img
             src={fmcamps.src}
             alt="logo fmcamps"
@@ -30,7 +57,7 @@ const currentPath = Astro.url.pathname;
         />
     </a>
     <div class="flex gap-x-10 items-center">
-        <a href="/" data-astro-prefetch>
+        <a href={translatePath("/")} data-astro-prefetch>
             <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
@@ -50,27 +77,85 @@ const currentPath = Astro.url.pathname;
             </svg>
         </a>
 
-        {allPages.map((page) => <a href={page.url} data-astro-prefetch>{page.text}</a>)}
+        <!-- {
+            allPages.map((page) => (
+                <a href={page.url} data-astro-prefetch>
+                    {page.text}
+                </a>
+            ))
+        } -->
 
-        <div class="flex gap-x-3">
-            <img
-                src={brasil.src}
-                alt="cambiar idioam brasil"
-                decoding="async"
-                loading="lazy"
-                width="23"
-                height="17"
-                class="cursor-pointer"
-            />
-            <img
-                src={espania.src}
-                alt="cambiar idioma españa"
-                decoding="async"
-                loading="lazy"
-                width="23"
-                height="17"
-                class="cursor-pointer"
-            />
+        <a href={translatePath("/about/")} data-astro-prefetch>
+            {t("nav.about")}
+        </a>
+        <a href={translatePath("/product/")} data-astro-prefetch>
+            {t("nav.product")}
+        </a>
+        <a href={translatePath("/price/")} data-astro-prefetch>
+            {t("nav.pricing")}
+        </a>
+        <a href={translatePath("/contact/")} data-astro-prefetch>
+            {t("nav.contact")}
+        </a>
+
+        <div class="">
+            <LanguagePicker />
+            <!-- <a
+                href={`/en${pathToDirige}`}
+                class={lang == "en" ? "hidden" : "flex"}
+            >
+                <img
+                    src={usa.src}
+                    alt="cambiar idioma ingles"
+                    decoding="async"
+                    loading="lazy"
+                    width="23"
+                    height="17"
+                    class="cursor-pointer"
+                />
+            </a> -->
+            <!-- <a
+                href={`/en`}
+                class={lang == "en" ? "hidden" : "flex"}
+            >
+                <img
+                    src={usa.src}
+                    alt="cambiar idioma ingles"
+                    decoding="async"
+                    loading="lazy"
+                    width="23"
+                    height="17"
+                    class="cursor-pointer"
+                />
+            </a>
+            <a
+                href={`/br`}
+                class={lang == "br" ? "hidden" : "flex"}
+            >
+                <img
+                    src={brasil.src}
+                    alt="cambiar idioam brasil"
+                    decoding="async"
+                    loading="lazy"
+                    width="23"
+                    height="17"
+                    class="cursor-pointer"
+                />
+            </a>
+            <a
+                href={`/`}
+                class={lang == "es" ? "hidden" : "flex"}
+            >
+                <img
+                    src={espania.src}
+                    alt="cambiar idioma españa"
+                    decoding="async"
+                    loading="lazy"
+                    width="23"
+                    height="17"
+                    class="cursor-pointer"
+                />
+            </a> -->
         </div>
     </div>
 </div>
