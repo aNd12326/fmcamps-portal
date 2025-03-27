@@ -54,7 +54,7 @@ export function getLocalePaths(url: URL) {
 
   let newUrl = removeLanguagePrefix(url.pathname)
 
-  console.log(newUrl);
+  // console.log(newUrl);
 
   return Object.keys(locales).map((lang) => {
     return {

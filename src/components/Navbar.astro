@@ -1,11 +1,6 @@
 ---
-import brasil from "../assets/brasil.png";
-import espania from "../assets/ES.png";
-import usa from "../assets/US.png";
 import fmcamps from "../assets/logo_ftOp.webp";
 import LanguagePicker from "./LanguagePicker.astro";
-
-const currentPath = Astro.url.pathname;
 
 import {
     getLangFromUrl,
@@ -16,32 +11,17 @@ import {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const urlSeparate = currentPath.split("");
-let pathToDirige = "";
-let i = 3;
-
-// for (i; i < urlSeparate.length; i++) {
-//     console.log(urlSeparate[i]);
-//     if(urlSeparate)
-//     pathToDirige += urlSeparate[i];
-// }
-
-// console.log(pathToDirige);
-
-// console.log(currentPath);
-// console.log(pathToDirige);
-
-// console.log(Astro.url);
-
-
 // HIDE DEFAULT LANGUAGE "/ES" FROM URL
 const translatePath = useTranslatedPath(lang);
+
+const url = new URL(Astro.request.url);
+const path = url.pathname;
 ---
 
 <div
-    class={currentPath == "/" || "/br" || "/en"
-        ? "fixed px-4 w-full flex mx-auto justify-between"
-        : "fixed px-4 w-full flex mx-auto justify-between bg-gray-900 text-white"}
+    class={path === "/" || path === "/en/" || path === "/br/"
+        ? "bg-transparent fixed px-4 w-full flex mx-auto justify-between"
+        : "bg-gray-900 text-white fixed px-4 w-full flex mx-auto justify-between "}
 >
     <a href={translatePath("/")} aria-label="Go to homepage" data-astro>
         <img
@@ -90,40 +70,6 @@ const translatePath = useTranslatedPath(lang);
 
         <div class="flex gap-x-3 items-center">
             <LanguagePicker />
-            <!-- <a href={`/`}>
-                <img
-                    src={espania.src}
-                    alt="cambiar idioma españa"
-                    decoding="async"
-                    loading="lazy"
-                    width="23"
-                    height="17"
-                    class="cursor-pointer"
-                />
-            </a>
-            <a href={`/en`}>
-                <img
-                    src={usa.src}
-                    alt="cambiar idioam ingles"
-                    decoding="async"
-                    loading="lazy"
-                    width="23"
-                    height="17"
-                    class="cursor-pointer"
-                />
-            </a>
-
-            <a href={`/br`}>
-                <img
-                    src={brasil.src}
-                    alt="cambiar idioam brasil"
-                    decoding="async"
-                    loading="lazy"
-                    width="23"
-                    height="17"
-                    class="cursor-pointer"
-                />
-            </a> -->
         </div>
     </div>
 </div>

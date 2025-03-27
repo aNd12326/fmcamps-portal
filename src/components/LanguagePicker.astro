@@ -46,7 +46,7 @@ href={:/br/contact} brazil
     {
         getLocalePaths(Astro.url).map(({ lang, path }) => {
             let banderas = flags[lang as keyof FlagMap];
-            console.log(banderas);
+            // console.log(banderas);
 
             return (
                 <a href={path}>
