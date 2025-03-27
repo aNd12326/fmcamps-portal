@@ -8,6 +8,9 @@ export default defineConfig({
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en", "br"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
   },
   prefetch: true,
   vite: {

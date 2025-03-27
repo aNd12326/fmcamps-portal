@@ -27,4 +27,13 @@ export const ui = {
     },
 } as const;
 
+// export const routes = {
+//     en: {
+//         'about': 'about',
+//     },
+//     br: {
+//         'about': 'nós',
+//     },
+// }
+
 export const showDefaultLang = false;

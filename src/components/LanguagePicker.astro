@@ -1,53 +1,58 @@
 ---
 import { languages } from "../i18n/ui";
-import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import {
+    getLangFromUrl,
+    getLocalePaths,
+    useTranslatedPath,
+} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
 import brasil from "../assets/brasil.png";
-import espania from "../assets/espaniaOp.webp";
+import espania from "../assets/ES.png";
 import usa from "../assets/US.png";
+import { getRelativeLocaleUrl } from "astro:i18n";
+// console.log(Astro.url.pathname);
 
-const flags = [{ img: espania.src }, { img: brasil.src }, { img: usa.src }];
+// console.log(Astro.url.pathname.replace(`/${lang}`, ""));
 
-// Create a mapping of language codes to flag images
-const languageFlags = {
-    es: espania.src,
-    en: usa.src,
-    br: brasil.src,
+type FlagMap = {
+    br: string;
+    es: string;
+    en: string;
 };
 
-// Object.entries(languages).map(([lang, label]) => console.log(lang, label));
+const flags: FlagMap = {
+    br: brasil.src, // Portugués -> Brasil
+    es: espania.src, // Español -> España
+    en: usa.src, // Inglés -> Estados Unidos
+};
 ---
 
+<!-- pasar dinamicamente los lenguajes 
+/es => /
+/br 
+/en
+
+para
+
+href={:/contact}    español
+href={:/en/contact} ingles
+href={:/br/contact} brazil
+
+-->
 <ul class="flex gap-x-3">
-    <!-- {
-        Object.entries(languages).map(([lang, label], index) => {
-            // Usamos el índice para obtener la bandera correspondiente
-            const flag = flags[index]; // El índice garantiza que las banderas se asocian correctamente con los idiomas
+    {
+        getLocalePaths(Astro.url).map(({ lang, path }) => {
+            let banderas = flags[lang as keyof FlagMap];
+            console.log(banderas);
+
             return (
-                <li>
-                    <a href={translatePath("/", lang)}>
-                        <img
-                            src={flag.img}
-                            alt={label}
-                            decoding="async"
-                            loading="lazy"
-                            width="23"
-                            height="17"
-                            class="cursor-pointer"
-                        />
-                    </a>
-                </li>
+                <a href={path}>
+                    <img src={banderas} alt="" />
+                </a>
             );
         })
-    } -->
-    {
-        Object.entries(languages).map(([lang, label]) => (
-            <li>
-                <a href={translatePath("/", lang)}>{label}</a>
-            </li>
-        ))
     }
 </ul>
