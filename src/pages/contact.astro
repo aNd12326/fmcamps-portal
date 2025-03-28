@@ -2,15 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import ContactForm from "../components/ContactForm.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Contacto a FMCAMPS">
+<Layout title={t("layout.Contact.title")}>
 
     <main>
         <HeroSection
-            title="CONTÁCTANOS"
-            description="Estamos aqui para ayudarte con cualquier pregunta que tengas sobre nuestros servicios."
+            title={t("Contact.Hero.Seccion")}
+            description={t("Contact.Hero.Seccion.Description")}
         />
         <ContactForm />
     </main>

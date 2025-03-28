@@ -1,45 +1,53 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const experience = [
     {
-        numbers: "10",
-        type: "Años",
-        info: "de experiencia en el mercado peruano",
+        numbers: t("experience.years"),
+        type: t("experience.time"),
+        info: t("experience.text"),
     },
     {
-        numbers: "17",
-        type: "Sitios",
-        info: "top en mineria, energia y petroleo",
+        numbers: t("sites.number"),
+        type: t("sites.sites"),
+        info: t("sites.text"),
     },
     {
-        numbers: "1.5 M",
-        type: "OTs",
-        info: "registradas en nuestra plataforma",
-    },
-    { numbers: "50+", type: "Consultas e", info: "informes pre configurados" },
-
-    {
-        numbers: "305+",
-        type: "Mil alertas",
-        info: "por correos electronicos enviados",
+        numbers: t("ots.number"),
+        type: t("ots.sites"),
+        info: t("ots.text"),
     },
     {
-        numbers: "185 M",
-        type: "Soles",
-        info: "en Materiales, Consumibles y Repuestos",
+        numbers: t("queries.number"),
+        type: t("queries.sites"),
+        info: t("queries.text"),
     },
-    { numbers: "7.2 M", type: "HH", info: "reportados en OT" },
-    { numbers: "365", type: "Días", info: "de soporte al año" },
+    {
+        numbers: t("alerts.number"),
+        type: t("alerts.sites"),
+        info: t("alerts.text"),
+    },
+    {
+        numbers: t("soles.number"),
+        type: t("soles.sites"),
+        info: t("soles.text"),
+    },
+    { numbers: t("hh.number"), type: t("hh.sites"), info: t("hh.text") },
+    { numbers:  t("days.number"), type:  t("days.sites"), info:  t("days.text") },
 ];
 ---
 
 <div class="container mx-auto h-[1020px] content-center pt-20 pb-48">
     <!-- title -->
     <div class="text-center mb-24">
-        <h2 class="text-4xl font-semibold">¡Nuestra experiencia!</h2>
+        <h2 class="text-4xl font-semibold">{t("experience.title")}</h2>
     </div>
 
     <!-- grid de 4 - 2 filas -->
-    <div class="grid grid-cols-4 gap-10 ">
+    <div class="grid grid-cols-4 gap-10">
         {
             experience.map((item) => (
                 <div class="text-center content-center text-transform-gradient">

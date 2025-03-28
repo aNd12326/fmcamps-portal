@@ -3,9 +3,13 @@ import Layout from "../layouts/Layout.astro";
 
 import aboutImage from "../assets/team-1-800x800Op.jpg";
 import aboutImage2 from "../assets/team-1-800x800_2Op.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Nosotros - FMCAMPS">
+<Layout title={t("layout.About.title")}>
   <main class="max-w-7xl mx-auto pt-36 pb-14 px-4 text-black h-screen">
     <!-- Texto de introducción centrado -->
     <div class="max-w-2xl text-center mx-auto px-4 mb-24">

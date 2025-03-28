@@ -1,15 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import image from "../assets/bgheader.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="w-full h-screen text-white">
-    <div class="w-[1000px] mx-auto flex flex-col justify-center h-full text-center">
-        <h1 class="text-7xl font-semibold py-6 text-transform-gradient">SaaS para la Gestión de Sitios</h1>
-        <h2 class="text-5xl font-semibold py-6">Moderno, personalizable y confiable</h2>
+    <div
+        class="w-[1000px] mx-auto flex flex-col justify-center h-full text-center"
+    >
+        <h1 class="text-7xl font-semibold py-6 text-transform-gradient">
+            <!-- SaaS para la Gestión de Sitios -->
+            {t("hero.title")}
+        </h1>
+        <h2 class="text-5xl font-semibold py-6">
+            {t("hero.subtitle")}
+        </h2>
         <p class="text-2xl">
-            Haga seguimiento de sus servicios On Site en sus instalaciones o
-            campamentos remotos y en tiempo real
+            {t("hero.lastp")}
         </p>
     </div>
 </div>

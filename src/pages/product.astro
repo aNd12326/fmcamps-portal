@@ -1,8 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Layout from "../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Nuestro producto FMCAMPS">
+<Layout title={t("layout.Product.title")}>
 
     <section class="w-full pt-36 pb-14">
         <div

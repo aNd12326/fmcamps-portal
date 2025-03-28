@@ -4,6 +4,11 @@ import fmcampsWhite from "../assets/logo_ft7.png";
 import Linkedln from "../icons/Linkedln.astro";
 import Facebook from "../icons/Facebook.astro";
 import Github from "../icons/Github.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
 <footer class="w-full bg-white dark:bg-gray-900 dark:text-gray-100">
@@ -26,8 +31,7 @@ import Github from "../icons/Github.astro";
                 />
             </div>
             <p class="py-4">
-                Haga seguimiento de sus servicios On Site en sus instalaciones o
-                campamentos remotos y en tiempo real.
+                {t("Footer.phrase")}
             </p>
             <div class="flex justify-between md:w-[75%] my-6">
                 <a
@@ -63,38 +67,38 @@ import Github from "../icons/Github.astro";
             class="lg:col-span-2 grid lg:grid-cols-3 sm:grid-cols-2 gap-8 mt-6"
         >
             <div class="">
-                <h6 class="font-medium text-gray-400">Soporte</h6>
+                <h6 class="font-medium text-gray-400">{t("Footer.Support")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Planes</a>
+                        <a class="cursor-pointer">{t("Footer.support pricing")}</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <h6 class="font-medium text-gray-400">Compañía</h6>
+                <h6 class="font-medium text-gray-400">{t("Footer.Company")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Nosotros</a>
+                        <a class="cursor-pointer">{t("Footer.company about")}</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Contacto</a>
+                        <a class="cursor-pointer">{t("Footer.company contact")}</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <h6 class="font-medium text-gray-400">Legal</h6>
+                <h6 class="font-medium text-gray-400">{t("Footer.legal")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Política de Cookies</a>
+                        <a class="cursor-pointer">{t("Footer.legal cookies")}</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Política de Privacidad</a>
+                        <a class="cursor-pointer">{t("Footer.legal privacy")}</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Términos y Condiciones</a>
+                        <a class="cursor-pointer">{t("Footer.legal terms & conditions")}</a>
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">Libro de Reclamaciones</a>
+                        <a class="cursor-pointer">{t("Footer.legal book")}</a>
                     </li>
                 </ul>
             </div>

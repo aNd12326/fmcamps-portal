@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section class="py-24 dark:bg-gray-900">
     <div class="container mx-auto px-8 max-w-7xl">
         <div class="grid md:grid-cols-2 gap-12">
@@ -5,13 +12,13 @@
                 <span
                     class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4"
                 >
-                    Construyendo negocios
+                    {t("Contact.title")}
                 </span>
                 <h2 class="text-4xl font-bold mb-6 text-gray-900">
-                    Coloque sus datos y lo contactaremos en breve.
+                    {t("Contact.subtitle")}
                 </h2>
                 <p class="text-gray-600 mb-8">
-                    Estamos convencidos en que podemos apoyarlo en sus necesidades actuales y futuros con nuestra plataforma de gestión para facilities management y la gestión de activos.
+                    {t("Contact.paragraph")}
                 </p>
 
                 <div class="space-y-6">
@@ -33,13 +40,11 @@
                             </svg>
                         </div>
                         <div class="ml-4">
-                            <h3
-                                class="text-lg font-semibold text-gray-900"
-                            >
-                                Nuestro correo
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                {t("Contact.email.label")}
                             </h3>
                             <p class="text-gray-600">
-                                soporte@fmcamps.com.
+                                {t("Contact.email.address")}
                             </p>
                         </div>
                     </div>
@@ -62,13 +67,11 @@
                             </svg>
                         </div>
                         <div class="ml-4">
-                            <h3
-                                class="text-lg font-semibold text-gray-900"
-                            >
+                            <h3 class="text-lg font-semibold text-gray-900">
                                 Llámanos
                             </h3>
-                            <p class="text-gray-600 ">
-                                +51 999-333-123
+                            <p class="text-gray-600">
+                                {t("Contact.phone.number")}
                             </p>
                         </div>
                     </div>
@@ -96,23 +99,19 @@
                             </svg>
                         </div>
                         <div class="ml-4">
-                            <h3
-                                class="text-lg font-semibold text-gray-900 "
-                            >
-                                Visitanos
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                {t("Contact.address.label")}
                             </h3>
-                            <p class="text-gray-600 ">
-                                123 SaaS Street
+                            <p class="text-gray-600">
+                                {t("Contact.address.location")}
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-8">
-                    <h3
-                        class="text-lg font-semibold text-gray-900 mb-4"
-                    >
-                        Siguenos
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                        {t("Contact.socialMedia.label")}
                     </h3>
                     <div class="flex space-x-4">
                         <a
@@ -187,17 +186,15 @@
                 <div
                     class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border-secondary-800 p-6 border border-gray-700"
                 >
-                    <h3
-                        class="text-xl font-semibold mb-6 text-gray-900 "
-                    >
-                        Déjanos un mensaje
+                    <h3 class="text-xl font-semibold mb-6 text-gray-900">
+                        {t("Contact.form.title")}
                     </h3>
 
                     <form>
                         <div class="mb-4">
                             <label
-                                class="block text-sm font-medium text-gray-700  mb-1"
-                                >Correo de trabajo o email</label
+                                class="block text-sm font-medium text-gray-700 mb-1"
+                                >{t("Contact.form.email.label")}</label
                             >
                             <input
                                 type="email"
@@ -211,40 +208,44 @@
                             <label
                                 for="name"
                                 class="block text-sm font-medium text-gray-700 mb-1"
-                                >Nombres</label
+                                >{t("Contact.form.name.label")}</label
                             >
                             <input
                                 type="text"
                                 id="name"
                                 class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                                placeholder="Nombres"
+                                placeholder={t("Contact.form.name.placeholder")}
                             />
                         </div>
 
                         <div class="mb-4">
                             <label
-                                class="block text-sm font-medium text-gray-700  mb-1"
-                                >Teléfono</label
+                                class="block text-sm font-medium text-gray-700 mb-1"
+                                >{t("Contact.form.phone.label")}</label
                             >
                             <input
                                 type="number"
                                 id="telefono"
                                 class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                                placeholder="+51 981-381-802"
+                                placeholder={t(
+                                    "Contact.form.phone.placeholder",
+                                )}
                             />
                         </div>
 
                         <div class="mb-6">
                             <label
                                 for="message"
-                                class="block text-sm font-medium text-gray-700  mb-1"
-                                >Mensaje</label
+                                class="block text-sm font-medium text-gray-700 mb-1"
+                                >{t("Contact.form.message.label")}</label
                             >
                             <textarea
                                 id="message"
                                 rows="5"
                                 class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                                placeholder="Mensaje a digitar"></textarea>
+                                placeholder={t(
+                                    "Contact.form.message.placeholder",
+                                )}></textarea>
                         </div>
 
                         <div>
@@ -252,7 +253,7 @@
                                 type="submit"
                                 class="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none bg-gray-900 hover:bg-gray-800 text-white shadow-md hover:shadow-lg cursor-pointer"
                             >
-                                Enviar Mensaje
+                                {t("Contact.form.submitButton")}
                             </button>
                         </div>
 

@@ -1,8 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Layout from "../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Planes FMCAMPS">
+<Layout title={t("layout.Price.title")}>
     <section class="pt-36 pb-24 py-24 leading-7 h-screen flex items-center">
         <div
             class="box-border px-4 mx-auto border-solid sm:px-6 md:px-6 lg:px-8 max-w-7xl"
@@ -23,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
             <div
                 class="grid grid-cols-1 gap-4 mt-4 leading-7 text-gray-900 border-0 border-gray-200 sm:mt-6 sm:gap-6 md:mt-8 md:gap-0 lg:grid-cols-3"
             >
-                {/* <!-- Price 1 --> */}
+                <!-- Precio 1 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border border-solid rounded-lg lg:-mr-3 sm:my-0 sm:p-6 md:my-8 md:p-8"
                 >
@@ -42,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
                         </p>
                         <p
                             class="box-border m-0 border-solid"
-                            style={{ borderImage: "initial" }}
+                            style="border-image: initial;"
                         >
                             / mes
                         </p>
@@ -67,7 +71,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Automated Reporting
+                            Informes Automatizados
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -81,7 +85,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Faster Processing
+                            Procesamiento Rápido
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -95,7 +99,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Customizations
+                            Personalización
                         </li>
                     </ul>
                     <button
@@ -104,14 +108,14 @@ import Layout from "../layouts/Layout.astro";
                         Seleccionar Plan
                     </button>
                 </div>
-                {/* <!-- Price 2 --> */}
+                <!-- Precio 2 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border-4 border-blue-600 border-solid rounded-lg sm:p-6 md:px-8 md:py-16"
                 >
                     <h3
                         class="m-0 text-2xl font-semibold leading-tight tracking-tight border-0 border-gray-200 sm:text-3xl md:text-4xl"
                     >
-                        Standar
+                        Estándar
                     </h3>
                     <div
                         class="flex items-end mt-6 leading-7 border-0 border-gray-200"
@@ -123,7 +127,7 @@ import Layout from "../layouts/Layout.astro";
                         </p>
                         <p
                             class="box-border m-0 border-solid"
-                            style={{ borderImage: "initial" }}
+                            style="border-image: initial;"
                         >
                             / mes
                         </p>
@@ -148,7 +152,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Everything in Starter
+                            Todo en Starter
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -162,7 +166,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            100 Builds
+                            100 Construcciones
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -176,7 +180,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Progress Reports
+                            Informes de Progreso
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -190,7 +194,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Premium Support
+                            Soporte Premium
                         </li>
                     </ul>
                     <button
@@ -199,7 +203,7 @@ import Layout from "../layouts/Layout.astro";
                         Seleccionar
                     </button>
                 </div>
-                {/* <!-- Price 3 --> */}
+                <!-- Precio 3 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border border-solid rounded-lg lg:-ml-3 sm:my-0 sm:p-6 md:my-8 md:p-8"
                 >
@@ -218,7 +222,7 @@ import Layout from "../layouts/Layout.astro";
                         </p>
                         <p
                             class="box-border m-0 border-solid"
-                            style={{ borderImage: "initial" }}
+                            style="border-image: initial;"
                         >
                             / mes
                         </p>
@@ -244,7 +248,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Everything in Basic
+                            Todo en Estándar
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -258,7 +262,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Unlimited Builds
+                            Construcciones Ilimitadas
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -272,7 +276,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Advanced Analytics
+                            Análisis Avanzado
                         </li>
                         <li
                             class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid"
@@ -286,7 +290,7 @@ import Layout from "../layouts/Layout.astro";
                             >
                                 <path d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Company Evaluations
+                            Evaluaciones de Empresa
                         </li>
                     </ul>
                     <button

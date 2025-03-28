@@ -1,16 +1,19 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Nuestro producto FMCAMPS">
+<Layout title={t("layout.Product.title")}>
     <Navbar />
     <section class="w-full pt-36 pb-14">
         <div
             class="bg-white dark:bg-gray-900 rounded-lg flex flex-row items-center content-center py-8 mx-auto leading-6 border-0 border-gray-300 border-solid max-w-7xl px-16"
         >
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
@@ -27,20 +30,20 @@ import Footer from "../../components/Footer.astro";
                 </div>
             </div>
 
-            <!-- Content -->
+            <!-- Conteúdo -->
             <div
                 class="box-border order-first w-full border-solid md:w-1/2 md:pl-10 md:order-none"
             >
                 <h2
                     class="text-xl font-semibold leading-tight border-0 lg:text-3xl md:text-2xl"
                 >
-                    Gestión de Ordenes de Trabajo
+                    Gestão de Ordens de Serviço
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"
                 >
-                    Mantenimiento preventivo, correctivo, inspecciones,
-                    adicionales y rutinarios.
+                    Manutenção preventiva, corretiva, inspeções, adicionais e
+                    rotineiras.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -50,8 +53,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Maximize productivity and growth
+                        </span> Maximize produtividade e crescimento
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -60,8 +62,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Speed past your competition
+                        </span> Supere sua concorrência
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -70,8 +71,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Learn the top techniques
+                        </span> Aprenda as melhores técnicas
                     </li>
                 </ul>
             </div>
@@ -80,21 +80,21 @@ import Footer from "../../components/Footer.astro";
         <div
             class="box-border flex flex-col rounded-lg items-center content-center px-8 py-8 mx-auto mt-2 leading-6 border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16"
         >
-            <!-- Section 2 -->
+            <!-- Seção 2 -->
             <div
                 class="box-border w-full border-solid md:w-1/2 md:pl-6 xl:pl-32"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Gestión de Almacenes
+                    Gestão de Estoques
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-10 lg:text-lg"
                 >
-                    Stock actualizado de materiales, herramientas y consumibles.
-                    Inventarios valorizados por familia. Kardex diario, semanal,
-                    mensual, por ubicación, por actividad.
+                    Estoque atualizado de materiais, ferramentas e consumíveis.
+                    Inventários avaliados por família. Kardex diário, semanal,
+                    mensal, por localização e atividade.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -104,8 +104,8 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Automated task management workflow
+                        </span> Fluxo de trabalho automatizado de gerenciamento de
+                        tarefas
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -114,8 +114,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Detailed analytics for your data
+                        </span> Análises detalhadas para seus dados
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -124,14 +123,13 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Some awesome integrations
+                        </span> Algumas integrações incríveis
                     </li>
                 </ul>
             </div>
-            <!-- End  Content -->
+            <!-- Fim do Conteúdo -->
 
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
@@ -147,13 +145,13 @@ import Footer from "../../components/Footer.astro";
             </div>
         </div>
 
-        <!--Section 3 -->
+        <!-- Seção 3 -->
         <div
             class="bg-white dark:bg-gray-900 rounded-lg flex flex-col items-center content-center px-8 py-8 mx-auto leading-6 border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16"
         >
-            <!-- Image -->
+            <!-- Imagem -->
             <div
-                class="box-bo.rder w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
+                class="box-border w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
                 <img
                     src="https://cdn.devdojo.com/images/december2020/productivity.png"
@@ -166,19 +164,19 @@ import Footer from "../../components/Footer.astro";
                 />
             </div>
 
-            <!-- Content -->
+            <!-- Conteúdo -->
             <div
                 class="box-border order-first w-full border-solid md:w-1/2 md:pl-10 md:order-none"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Gestión de Personal
+                    Gestão de Pessoal
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"
                 >
-                    Técnicos, supervisores, jefes y managers.
+                    Técnicos, supervisores, líderes de equipe e gerentes.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -188,8 +186,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Maximize productivity and growth
+                        </span> Maximize produtividade e crescimento
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -198,8 +195,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Speed past your competition
+                        </span> Supere sua concorrência
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -208,33 +204,31 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Learn the top techniques
+                        </span> Aprenda as melhores técnicas
                     </li>
                 </ul>
             </div>
-            <!-- End  Content -->
+            <!-- Fim do Conteúdo -->
         </div>
 
-        <!--Section 4 -->
+        <!-- Seção 4 -->
         <div
             class="box-border flex flex-col rounded-lg items-center content-center px-8 py-8 mx-auto mt-2 leading-6 border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16"
         >
-            {/* <!-- Content --> */}
+            <!-- Conteúdo -->
             <div
                 class="box-border w-full border-solid md:w-1/2 md:pl-6 xl:pl-32"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Gestión de Inventarios
+                    Gestão de Inventário
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-10 lg:text-lg"
                 >
-                    Instalaciones, equipos y activos por centro de costo donde
-                    requiera llevar una Hoja de Vida para su sequimiento y
-                    control.
+                    Instalações, equipamentos e ativos por centro de custo que
+                    necessitam de ficha de vida para controle e rastreamento.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -244,8 +238,8 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Automated task management workflow
+                        </span> Fluxo de trabalho automatizado de gerenciamento de
+                        tarefas
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -254,8 +248,7 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Detailed analytics for your data
+                        </span> Análises detalhadas para seus dados
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -264,14 +257,13 @@ import Footer from "../../components/Footer.astro";
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span>{" "}
-                        Some awesome integrations
+                        </span> Algumas integrações incríveis
                     </li>
                 </ul>
             </div>
-            {/* <!-- End  Content --> */}
+            <!-- Fim do Conteúdo -->
 
-            {/* <!-- Image --> */}
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
@@ -287,5 +279,6 @@ import Footer from "../../components/Footer.astro";
             </div>
         </div>
     </section>
+
     <!-- <Footer /> -->
 </Layout>

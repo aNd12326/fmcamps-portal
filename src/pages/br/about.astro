@@ -3,17 +3,20 @@ import Layout from "../../layouts/Layout.astro";
 
 import aboutImage from "../../assets/team-1-800x800Op.jpg";
 import aboutImage2 from "../../assets/team-1-800x800_2Op.jpg";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Nosotros - FMCAMPS">
-
+<Layout title={t("layout.About.title")}>
   <main class="max-w-7xl mx-auto pt-36 pb-14 px-4 text-black h-screen">
     <!-- Texto de introducción centrado -->
     <div class="max-w-2xl text-center mx-auto px-4 mb-24">
       <p class="text-lg font-light leading-relaxed mt-6 mb-4">
-        Nuestro equipo cuenta con 10 años de experiencia en la industria de
-        Servicios On Site colaborando con la implementación de herramientas
-        digitales y la optimización de los procesos de nuestros clientes.
+        Nossa equipe tem 10 anos de experiência na indústria de Serviços On
+        Site, colaborando com a implementação de ferramentas digitais e a
+        otimização dos processos de nossos clientes.
       </p>
     </div>
 
@@ -30,13 +33,12 @@ import aboutImage2 from "../../assets/team-1-800x800_2Op.jpg";
 
         <div class="pt-6 text-center">
           <h6 class="text-xl font-serif font-bold leading-normal mt-0 mb-2">
-            Misión
+            Missão
           </h6>
           <p class="text-base font-light leading-relaxed mt-0 mb-4">
-            Somos una empresa joven peruana con la misión de llevar los
-            beneficios de la economía de la nube digital a las empresas con
-            requerimientos de gestión de servicios de Facilities Management y
-            Gestión de Activos.
+            Somos uma empresa jovem peruana com a missão de levar os benefícios
+            da economia da nuvem digital para as empresas com requisitos de
+            gestão de serviços de Facilities Management e Gestão de Ativos.
           </p>
           {/* el otro div */}
         </div>
@@ -53,16 +55,15 @@ import aboutImage2 from "../../assets/team-1-800x800_2Op.jpg";
 
         <div class="pt-6 text-center">
           <h6 class="text-xl font-serif font-bold leading-normal mt-0 mb-2">
-            Visión
+            Visão
           </h6>
           <p class="text-base font-light leading-relaxed mt-0 mb-4">
-            Ser la primera empresa de colaboración B2B especializada en brindar
-            servicios de software SaaS para FM en la industria minera peruana.
+            Ser a primeira empresa de colaboração B2B especializada em fornecer
+            serviços de software SaaS para FM na indústria de mineração peruana.
           </p>
           {/* el otro div */}
         </div>
       </div>
     </div>
   </main>
-
 </Layout>

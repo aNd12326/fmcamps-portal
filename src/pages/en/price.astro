@@ -1,9 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Planes FMCAMPS">
-
+<Layout title={t("layout.Price.title")}>
     <section class="pt-36 pb-24 py-24 leading-7 h-screen flex items-center">
         <div
             class="box-border px-4 mx-auto border-solid sm:px-6 md:px-6 lg:px-8 max-w-7xl"
@@ -14,19 +17,16 @@ import Layout from "../../layouts/Layout.astro";
                 <h2
                     class="box-border m-0 text-3xl font-semibold leading-tight tracking-tight border-solid sm:text-4xl md:text-5xl"
                 >
-                    Planes simples y transparentes
+                    Simple and Transparent Plans
                 </h2>
-                <p
-                    class="box-border mt-2 text-xl border-solid sm:text-2xl"
-                >
-                    Precios para adaptarse a las necesidades de cualquier tamaño
-                    de empresa.
+                <p class="box-border mt-2 text-xl border-solid sm:text-2xl">
+                    Pricing to suit the needs of any company size.
                 </p>
             </div>
             <div
                 class="grid grid-cols-1 gap-4 mt-4 leading-7 text-gray-900 border-0 border-gray-200 sm:mt-6 sm:gap-6 md:mt-8 md:gap-0 lg:grid-cols-3"
             >
-                {/* <!-- Price 1 --> */}
+                <!-- Price 1 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border border-solid rounded-lg lg:-mr-3 sm:my-0 sm:p-6 md:my-8 md:p-8"
                 >
@@ -47,13 +47,13 @@ import Layout from "../../layouts/Layout.astro";
                             class="box-border m-0 border-solid"
                             style={{ borderImage: "initial" }}
                         >
-                            / mes
+                            / month
                         </p>
                     </div>
                     <p
                         class="mt-6 mb-5 text-base leading-normal text-left text-gray-900 border-0 border-gray-200"
                     >
-                        Ideal para Pymes.
+                        Ideal for SMBs.
                     </p>
                     <ul
                         class="flex-1 p-0 mt-4 ml-5 leading-7 text-gray-900 border-0 border-gray-200"
@@ -104,17 +104,17 @@ import Layout from "../../layouts/Layout.astro";
                     <button
                         class="inline-flex justify-center w-full px-4 py-3 mt-8 font-sans text-sm leading-none text-center text-blue-600 no-underline bg-transparent border border-blue-600 rounded-md cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700 focus-within:text-white sm:text-base md:text-lg"
                     >
-                        Seleccionar Plan
+                        Select Plan
                     </button>
                 </div>
-                {/* <!-- Price 2 --> */}
+                <!-- Price 2 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border-4 border-blue-600 border-solid rounded-lg sm:p-6 md:px-8 md:py-16"
                 >
                     <h3
                         class="m-0 text-2xl font-semibold leading-tight tracking-tight border-0 border-gray-200 sm:text-3xl md:text-4xl"
                     >
-                        Standar
+                        Standard
                     </h3>
                     <div
                         class="flex items-end mt-6 leading-7 border-0 border-gray-200"
@@ -128,13 +128,13 @@ import Layout from "../../layouts/Layout.astro";
                             class="box-border m-0 border-solid"
                             style={{ borderImage: "initial" }}
                         >
-                            / mes
+                            / month
                         </p>
                     </div>
                     <p
                         class="mt-6 mb-5 text-base leading-normal text-left border-0 border-gray-200"
                     >
-                        Ideal para medianas y grandes empresas
+                        Ideal for medium and large businesses
                     </p>
                     <ul
                         class="flex-1 p-0 mt-4 leading-7 border-0 border-gray-200"
@@ -199,10 +199,10 @@ import Layout from "../../layouts/Layout.astro";
                     <button
                         class="inline-flex justify-center w-full px-4 py-3 mt-8 font-sans text-sm leading-none text-center no-underline bg-blue-600 border rounded-md cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700 focus-within:text-white sm:text-base md:text-lg"
                     >
-                        Seleccionar
+                        Select Plan
                     </button>
                 </div>
-                {/* <!-- Price 3 --> */}
+                <!-- Price 3 -->
                 <div
                     class="flex flex-col items-center max-w-md p-4 mx-auto my-0 border border-solid rounded-lg lg:-ml-3 sm:my-0 sm:p-6 md:my-8 md:p-8"
                 >
@@ -223,14 +223,13 @@ import Layout from "../../layouts/Layout.astro";
                             class="box-border m-0 border-solid"
                             style={{ borderImage: "initial" }}
                         >
-                            / mes
+                            / month
                         </p>
                     </div>
                     <p
                         class="mt-6 mb-5 text-base leading-normal text-left border-0 border-gray-200"
                     >
-                        Ideal para corporaciones y empresas especializadas en
-                        brindar servicios de FM.
+                        Ideal for corporations and FM service companies.
                     </p>
                     <ul
                         class="flex-1 p-0 mt-4 leading-7 border-0 border-gray-200"
@@ -295,11 +294,10 @@ import Layout from "../../layouts/Layout.astro";
                     <button
                         class="inline-flex justify-center w-full px-4 py-3 mt-8 font-sans text-sm leading-none text-center text-blue-600 no-underline bg-transparent border border-blue-600 rounded-md cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700 focus-within:text-white sm:text-base md:text-lg"
                     >
-                        Seleccionar Plan
+                        Select Plan
                     </button>
                 </div>
             </div>
         </div>
     </section>
-
 </Layout>
