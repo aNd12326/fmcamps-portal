@@ -40,20 +40,20 @@ const experience = [
 ];
 ---
 
-<div class="container mx-auto h-[1020px] content-center pt-20 pb-48">
+<div class="container mx-auto min-h-screen content-center pt-20 pb-48">
     <!-- title -->
     <div class="text-center mb-24">
         <h2 class="text-4xl font-semibold">{t("experience.title")}</h2>
     </div>
 
     <!-- grid de 4 - 2 filas -->
-    <div class="grid grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
         {
             experience.map((item) => (
                 <div class="text-center content-center text-transform-gradient">
-                    <h2 class="text-7xl">{item.numbers}</h2>
-                    <span class="text-xl">{item.type}</span>
-                    <p class="text-sm uppercase">{item.info}</p>
+                    <h1 class="p-2">{item.numbers}</h1>
+                    <span class="p-2">{item.type}</span>
+                    <p class="text-sm uppercase p-2">{item.info}</p>
                 </div>
             ))
         }

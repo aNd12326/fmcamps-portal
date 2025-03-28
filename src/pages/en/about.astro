@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t("layout.About.title")}>
-  <main class="max-w-7xl mx-auto pt-36 pb-14 px-4 text-black h-screen">
+  <main class="max-w-7xl mx-auto pt-36 pb-14 px-4 text-black min-h-screen">
     <!-- Texto de introducción centrado -->
     <div class="max-w-2xl text-center mx-auto px-4 mb-24">
       <p class="text-lg font-light leading-relaxed mt-6 mb-4">
@@ -21,7 +21,7 @@ const t = useTranslations(lang);
     </div>
 
     <!-- Sección de dos columnas con imágenes y textos -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="px-6">
         <img
           src={aboutImage.src}

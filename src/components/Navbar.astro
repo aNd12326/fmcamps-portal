@@ -18,9 +18,9 @@ const url = new URL(Astro.request.url);
 const path = url.pathname;
 ---
 
-<div
+<!-- <div
     class={path === "/" || path === "/en/" || path === "/br/"
-        ? "navbar bg-transparent fixed px-4 w-full flex mx-auto justify-between "
+        ? "navbar hidden lg:flex bg-transparent fixed px-4 w-full mx-auto justify-between"
         : "navbar bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)] fixed px-4 w-full flex mx-auto justify-between "}
 >
     <a href={translatePath("/")} aria-label="Go to homepage" data-astro>
@@ -72,4 +72,187 @@ const path = url.pathname;
             <LanguagePicker />
         </div>
     </div>
-</div>
+</div> --><!-- mobile -->
+<header class="fixed top-0 z-60 w-full">
+    <nav
+        class={path === "/" || path === "/en/" || path === "/br/"
+            ? " mx-auto flex items-center justify-between px-4 pb-0 uppercase lg:px-8 bg-transparent"
+            : "mx-auto flex items-center justify-between px-4 pb-0 uppercase lg:px-8 bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)]"}
+    >
+        <a href={translatePath("/")}>
+            <img
+                src={fmcamps.src}
+                alt="logo fmcamps"
+                decoding="async"
+                loading="lazy"
+                width="310"
+                height="95"
+                class="cursor-pointer"
+            />
+        </a>
+
+        <div class="hidden lg:flex gap-x-10 items-center">
+            <a href={translatePath("/")} data-astro>
+                <svg
+                    class="w-6 h-6 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+                    ></path>
+                </svg>
+            </a>
+
+            <a href={translatePath("/about/")} data-astro>
+                {t("nav.about")}
+            </a>
+            <a href={translatePath("/product/")} data-astro>
+                {t("nav.product")}
+            </a>
+            <a href={translatePath("/price/")} data-astro>
+                {t("nav.pricing")}
+            </a>
+            <a href={translatePath("/contact/")} data-astro>
+                {t("nav.contact")}
+            </a>
+
+            <div class="flex gap-x-3 items-center">
+                <LanguagePicker />
+            </div>
+        </div>
+
+        <div class="flex lg:hidden">
+            <button
+                type="button"
+                id="open-menu-button"
+                class="-m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+                <span class="sr-only">Abrir Menú Principal</span>
+                <svg
+                    class="size-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <dialog
+        class="z-50 max-h-full max-w-full size-full lg:hidden starting:-translate-x-full transition-(display) translate-x-0 duration-300 transition-discrete [&:not([open])]:-translate-x-full"
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+    >
+        <div class="z-10 overflow-y-auto bg-white px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex flex-1">
+                    <button
+                        type="button"
+                        id="close-menu-button"
+                        class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                    >
+                        <span class="sr-only">Cerrar Menú</span>
+                        <svg
+                            class="size-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                            data-slot="icon"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18 18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-6 space-y-2">
+                <a
+                    href={translatePath("/")}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                >
+                    Home
+                </a>
+                <a
+                    href={translatePath("/about/")}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                >
+                    {t("nav.about")}
+                </a>
+                <a
+                    href={translatePath("/price/")}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                >
+                    {t("nav.pricing")}
+                </a>
+                <a
+                    href={translatePath("/contact/")}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                >
+                    {t("nav.contact")}
+                </a>
+
+                <div class="flex items-center justify-center">
+                    <LanguagePicker />
+                </div>
+                <!-- <a
+                    href="/#info"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                    >Info</a
+                > -->
+            </div>
+        </div>
+    </dialog>
+</header>
+
+<script>
+    // Get the menu elements
+    // https://docs.astro.build/en/guides/view-transitions/ => Script re-execution
+
+    document.addEventListener("astro:page-load", () => {
+        const path = window.location.pathname;
+        if (path === "/en/" || path === "/br/") {
+            console.log("Estamos en la raíz de /en/ o /br/");
+        }
+
+        const mobileMenu = document.getElementById("mobile-menu");
+        const openMenuButton = document.getElementById("open-menu-button");
+        const closeMenuButton = document.getElementById("close-menu-button");
+        const mobileItems = mobileMenu?.querySelectorAll("a");
+
+        const toggleMenu = () => {
+            mobileMenu.open ? mobileMenu.close() : mobileMenu.showModal();
+        };
+
+        openMenuButton?.addEventListener("click", toggleMenu);
+
+        // Add event listener to close menu button
+        closeMenuButton?.addEventListener("click", toggleMenu);
+
+        mobileItems?.forEach((item) =>
+            item.addEventListener("click", toggleMenu),
+        );
+
+    });
+</script>

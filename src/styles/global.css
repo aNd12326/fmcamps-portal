@@ -14,8 +14,16 @@ h6 {
     @apply font-display dark:text-gray-200;
 }
 
+h1{
+    @apply text-4xl md:text-5xl lg:text-7xl font-semibold;
+}
+
+h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
 p {
-    @apply dark:text-gray-200;
+    @apply text-base md:text-lg leading-relaxed dark:text-gray-200;
 }
 
 li {
