@@ -11,5 +11,16 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-display;
+    @apply font-display dark:text-gray-200;
+}
+p{
+    @apply dark:text-gray-200;
+}
+
+li{
+    @apply dark:text-gray-200;
+}
+
+button{
+    @apply dark:text-gray-200;
 }

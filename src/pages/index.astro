@@ -1,6 +1,5 @@
 ---
 import Experience from "../components/Experience.astro";
-import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
@@ -10,14 +9,12 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="FMCAMPS. SaaS para la gestión de sitios">
-	<!-- <Welcome /> -->
 	<div class="hero bg-center bg-cover text-white">
 		<!-- bg-[url(../assets/bgheader.jpg)] bg-cover -->
 		<Navbar />
 		<Hero />
 	</div>
 	<Experience />
-	<!-- <Footer /> -->
 </Layout>
 
 <style>
@@ -27,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
 				rgba(0, 0.8, 0, 0)
 			),
 			url("../assets/bgheaderOp.jpg");
-		
+
 		animation: movimiento 10s infinite linear alternate;
 	}
 

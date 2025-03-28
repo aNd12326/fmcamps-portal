@@ -39,12 +39,10 @@ const lang = getLangFromUrl(Astro.url);
 		/>
 		<ClientRouter />
 	</head>
-	<body class="antialiased bg-gray-100">
-		<div>
-			<Navbar />
-			<slot />
-			<Footer />
-		</div>
+	<body class="antialiased bg-gray-100 text-black dark:bg-black dark:text-white">
+		<Navbar />
+		<slot />
+		<Footer />
 	</body>
 </html>
 

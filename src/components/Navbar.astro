@@ -20,8 +20,8 @@ const path = url.pathname;
 
 <div
     class={path === "/" || path === "/en/" || path === "/br/"
-        ? "bg-transparent fixed px-4 w-full flex mx-auto justify-between"
-        : "bg-gray-900 text-white fixed px-4 w-full flex mx-auto justify-between "}
+        ? "navbar bg-transparent fixed px-4 w-full flex mx-auto justify-between "
+        : "navbar bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)] fixed px-4 w-full flex mx-auto justify-between "}
 >
     <a href={translatePath("/")} aria-label="Go to homepage" data-astro>
         <img
@@ -37,7 +37,7 @@ const path = url.pathname;
     <div class="flex gap-x-10 items-center">
         <a href={translatePath("/")} data-astro>
             <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
+                class="w-6 h-6 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
