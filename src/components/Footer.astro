@@ -1,5 +1,6 @@
 ---
 import fmcamps from "../assets/logo_ftOp.webp";
+import fmcampsWhite from "../assets/logo_ft7.png";
 import Linkedln from "../icons/Linkedln.astro";
 import Facebook from "../icons/Facebook.astro";
 import Github from "../icons/Github.astro";
@@ -14,6 +15,14 @@ import Github from "../icons/Github.astro";
                     alt="Logo FMCAMPS"
                     decoding="async"
                     loading="lazy"
+                    class="dark:hidden"
+                />
+                <img
+                    src={fmcampsWhite.src}
+                    alt="Logo FMCAMPS"
+                    decoding="async"
+                    loading="lazy"
+                    class="hidden dark:block"
                 />
             </div>
             <p class="py-4">

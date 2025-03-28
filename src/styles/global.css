@@ -13,14 +13,26 @@ h5,
 h6 {
     @apply font-display dark:text-gray-200;
 }
-p{
+
+p {
     @apply dark:text-gray-200;
 }
 
-li{
+li {
     @apply dark:text-gray-200;
 }
 
-button{
+button {
     @apply dark:text-gray-200;
+}
+
+.text-transform-gradient {
+    background: linear-gradient(90deg,
+            #ffc07f,
+            #ff8200 25.17%,
+            #bbdef2 50%,
+            #61d1ff 73.09%,
+            #7b8fdd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
