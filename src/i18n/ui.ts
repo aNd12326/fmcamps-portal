@@ -8,6 +8,7 @@ export const defaultLang = 'es';
 
 export const ui = {
     es: {
+        'layout.Main.title': "FMCAMPS. SaaS para la gestión de sitios",
         'layout.About.title': "Nosotros - FMCAMPS",
         'layout.Product.title': "Nuestro producto FMCAMPS",
         'layout.Price.title': "Planes FMCAMPS",
@@ -111,6 +112,7 @@ export const ui = {
         "Metadata.keywords.eighth": "gestion"
     },
     en: {
+        'layout.Main.title': "FMCAMPS. SaaS for site management",
         "layout.About.title": "About Us - FMCAMPS",
         'layout.Product.title': "Our Product FMCAMPS",
         'layout.Price.title': "FMCAMPS Plans",
@@ -213,6 +215,7 @@ export const ui = {
         "Metadata.keywords.eighth": "management"
     },
     br: {
+        'layout.Main.title': "FMCAMPS. SaaS para gestão de sites",
         "layout.About.title": "Sobre Nós - FMCAMPS",
         'layout.Product.title': "Nosso Produto FMCAMPS",
         'layout.Price.title': "Planos FMCAMPS",

@@ -3,13 +3,17 @@ import Experience from "../../components/Experience.astro";
 import Footer from "../../components/Footer.astro";
 import Hero from "../../components/Hero.astro";
 import Navbar from "../../components/Navbar.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
-<Layout title="FMCAMPS. SaaS para la gestión de sitios">
+<Layout title={t("layout.Main.title")}>
 	<!-- <Welcome /> -->
 	<div class="hero bg-center bg-cover text-white">
 		<!-- bg-[url(../assets/bgheader.jpg)] bg-cover -->
