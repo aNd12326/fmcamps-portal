@@ -10,14 +10,13 @@ import Layout from "../../layouts/Layout.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <Layout title={t("layout.Main.title")}>
 	<!-- <Welcome /> -->
 	<div class="hero bg-center bg-cover text-white">
 		<!-- bg-[url(../assets/bgheader.jpg)] bg-cover -->
-		<Navbar />
+		<!-- <Navbar /> -->
 		<Hero />
 	</div>
 	<Experience />
@@ -31,7 +30,7 @@ const t = useTranslations(lang);
 				rgba(0, 0.8, 0, 0)
 			),
 			url("../../assets/bgheaderOp.jpg");
-		
+
 		animation: movimiento 10s infinite linear alternate;
 	}
 
@@ -44,3 +43,71 @@ const t = useTranslations(lang);
 		}
 	}
 </style>
+
+<script>
+	// index =>  text color  = white
+	document.addEventListener("astro:page-load", () => {
+		const navbar = document.getElementById("navbar");
+
+		// navbar.classList.add("text-gray-100");
+
+		const handleScroll = () => {
+			const scrollThreshold = 900;
+
+			// Determinar si estamos en una página de índice
+			const isIndexPage =
+				window.location.pathname === "/" ||
+				window.location.pathname === "/br/" ||
+				window.location.pathname === "/en/";
+
+			if (window.scrollY >= scrollThreshold) {
+				// Al hacer scroll
+				navbar.classList.remove("bg-transparent");
+				navbar.classList.add(
+					"bg-white",
+					"dark:bg-gray-900",
+					"shadow-md",
+				);
+
+				// En páginas de índice, cambiar a texto negro
+				if (isIndexPage) {
+					navbar.classList.remove("text-white");
+					navbar.classList.add("text-black", "dark:text-white");
+				}
+			} else {
+				// Sin scroll (estado inicial)
+				if (isIndexPage) {
+					// En índice con fondo transparente
+					navbar.classList.remove(
+						"bg-white",
+						"dark:bg-gray-900",
+						"shadow-md",
+					);
+					navbar.classList.add("bg-transparent");
+					navbar.classList.remove("text-black", "dark:text-white");
+					navbar.classList.add("text-white");
+				} else {
+					// En otras páginas
+					navbar.classList.remove("bg-transparent", "text-white");
+					navbar.classList.add(
+						"bg-white",
+						"dark:bg-gray-900",
+						"text-black",
+						"dark:text-white",
+					);
+				}
+			}
+		};
+
+		// Initial check on page load
+		handleScroll();
+
+		// Add scroll event listener
+		window.addEventListener("scroll", handleScroll);
+
+		// Limpiar listener en transición de página
+		document.addEventListener("astro:before-swap", () => {
+			window.removeEventListener("scroll", handleScroll);
+		});
+	});
+</script>

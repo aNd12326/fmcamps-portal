@@ -10,7 +10,6 @@ import Layout from "../layouts/Layout.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <Layout title={t("layout.Main.title")}>
@@ -42,3 +41,71 @@ const t = useTranslations(lang);
 		}
 	}
 </style>
+
+<script>
+	// index =>  text color  = white
+	document.addEventListener("astro:page-load", () => {
+		const navbar = document.getElementById("navbar");
+
+		// navbar.classList.add("text-gray-100");
+
+		const handleScroll = () => {
+			const scrollThreshold = 900;
+
+			// Determinar si estamos en una página de índice
+			const isIndexPage =
+				window.location.pathname === "/" ||
+				window.location.pathname === "/br/" ||
+				window.location.pathname === "/en/";
+
+			if (window.scrollY >= scrollThreshold) {
+				// Al hacer scroll
+				navbar.classList.remove("bg-transparent");
+				navbar.classList.add(
+					"bg-white",
+					"dark:bg-gray-900",
+					"shadow-md",
+				);
+
+				// En páginas de índice, cambiar a texto negro
+				if (isIndexPage) {
+					navbar.classList.remove("text-white");
+					navbar.classList.add("text-black", "dark:text-white");
+				}
+			} else {
+				// Sin scroll (estado inicial)
+				if (isIndexPage) {
+					// En índice con fondo transparente
+					navbar.classList.remove(
+						"bg-white",
+						"dark:bg-gray-900",
+						"shadow-md",
+					);
+					navbar.classList.add("bg-transparent");
+					navbar.classList.remove("text-black", "dark:text-white");
+					navbar.classList.add("text-white");
+				} else {
+					// En otras páginas
+					navbar.classList.remove("bg-transparent", "text-white");
+					navbar.classList.add(
+						"bg-white",
+						"dark:bg-gray-900",
+						"text-black",
+						"dark:text-white",
+					);
+				}
+			}
+		};
+
+		// Initial check on page load
+		handleScroll();
+
+		// Add scroll event listener
+		window.addEventListener("scroll", handleScroll);
+
+		// Limpiar listener en transición de página
+		document.addEventListener("astro:before-swap", () => {
+			window.removeEventListener("scroll", handleScroll);
+		});
+	});
+</script>
