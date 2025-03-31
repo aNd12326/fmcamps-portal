@@ -164,11 +164,10 @@ export default function Form({ link }: FormProps) {
                 <h3
                     className="text-xl font-semibold text-gray-900 dark:text-white mb-2"
                 >
-                    Message Sent!
+                    {t("Contact.form.cardSend")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                    Thank you for reaching out. We'll get back to
-                    you as soon as possible.
+                    {t("Contact.form.cardSend.details")}
                 </p>
             </div> : <button
                 type="submit"

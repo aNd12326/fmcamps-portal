@@ -101,6 +101,8 @@ export const ui = {
         "Contact.form.message.label": "Mensaje",
         "Contact.form.message.placeholder": "Mensaje a digitar",
         "Contact.form.submitButton": "Enviar Mensaje",
+        "Contact.form.cardSend": "Mensaje enviado",
+        "Contact.form.cardSend.details": "Gracias por ponerte en contacto. Te responderemos lo antes posible.",
 
         "Contact.form.error.email": "Email es obligatorio",
         "Contact.form.error.email.pattern": "Brinde un correo válido",
@@ -217,6 +219,8 @@ export const ui = {
         "Contact.form.error.phone": "Phone is required",
         "Contact.form.error.message": "Message is required",
         "Contact.form.error.message.required": "Please provide a message",
+        "Contact.form.cardSend": "Message Sent!",
+        "Contact.form.cardSend.details": "Thank you for reaching out. We'll get back to you as soon as possible.",
 
 
         "Metadata.title": "FMCAMPS. SaaS for Site Management",
@@ -327,7 +331,8 @@ export const ui = {
         "Contact.form.error.phone": "O telefone é obrigatório",
         "Contact.form.error.message": "A mensagem é obrigatória",
         "Contact.form.error.message.required": "Por favor, forneça uma mensagem",
-
+        "Contact.form.cardSend": "Mensagem Enviada!",
+        "Contact.form.cardSend.details": "Obrigado por entrar em contato. Responderemos o mais rápido possível.",
 
         "Metadata.title": "FMCAMPS. SaaS para Gestão de Sites",
         "Metadata.description": "FMCAMPS. SaaS para Gestão de Sites",
