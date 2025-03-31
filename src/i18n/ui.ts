@@ -102,6 +102,13 @@ export const ui = {
         "Contact.form.message.placeholder": "Mensaje a digitar",
         "Contact.form.submitButton": "Enviar Mensaje",
 
+        "Contact.form.error.email": "Email es obligatorio",
+        "Contact.form.error.email.pattern": "Brinde un correo válido",
+        "Contact.form.error.name": "El nombre es obligatorio",
+        "Contact.form.error.phone": "El celular es obligatorio",
+        "Contact.form.error.message": "El mensaje es obligatorio",
+        "Contact.form.error.message.required": "Porfavor, Brindanos un mensaje",
+
         "Metadata.title": "FMCAMPS. SaaS para la gestión de Sitios",
         "Metadata.description": "FMCAMPS. SaaS para la gestión de Sitios",
         "Metadata.keywords.third": "mantenimiento",
@@ -117,7 +124,7 @@ export const ui = {
         'layout.Product.title': "Our Product FMCAMPS",
         'layout.Price.title': "FMCAMPS Plans",
         'layout.Contact.title': "Contact FMCAMPS",
-        
+
         'nav.about': 'About',
         'nav.product': 'Product',
         'nav.pricing': 'Pricing',
@@ -204,6 +211,13 @@ export const ui = {
         "Contact.form.message.placeholder": "Type your message",
         "Contact.form.submitButton": "Send message",
 
+        "Contact.form.error.email": "Email is required",
+        "Contact.form.error.email.pattern": "Provided a real email",
+        "Contact.form.error.name": "Name is required",
+        "Contact.form.error.phone": "Phone is required",
+        "Contact.form.error.message": "Message is required",
+        "Contact.form.error.message.required": "Please provide a message",
+
 
         "Metadata.title": "FMCAMPS. SaaS for Site Management",
         "Metadata.description": "FMCAMPS. SaaS for Site Management",
@@ -220,7 +234,7 @@ export const ui = {
         'layout.Product.title': "Nosso Produto FMCAMPS",
         'layout.Price.title': "Planos FMCAMPS",
         'layout.Contact.title': "Contato FMCAMPS",
-        
+
         'nav.about': 'Nós',
         'nav.product': 'Produto',
         'nav.pricing': 'Preços',
@@ -306,6 +320,14 @@ export const ui = {
         "Contact.form.message.label": "Mensagem",
         "Contact.form.message.placeholder": "Digite sua mensagem",
         "Contact.form.submitButton": "Enviar mensagem",
+
+        "Contact.form.error.email": "O email é obrigatório",
+        "Contact.form.error.email.pattern": "Informe um email válido",
+        "Contact.form.error.name": "O nome é obrigatório",
+        "Contact.form.error.phone": "O telefone é obrigatório",
+        "Contact.form.error.message": "A mensagem é obrigatória",
+        "Contact.form.error.message.required": "Por favor, forneça uma mensagem",
+
 
         "Metadata.title": "FMCAMPS. SaaS para Gestão de Sites",
         "Metadata.description": "FMCAMPS. SaaS para Gestão de Sites",

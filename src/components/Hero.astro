@@ -5,7 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="w-full h-screen text-white">
+<div class="w-full h-screen text-white hero-section">
     <!-- <div
         class="w-[1000px] mx-auto flex flex-col justify-center h-full text-center"
     >
@@ -20,7 +20,7 @@ const t = useTranslations(lang);
         </p>
     </div> -->
     <div
-        class="w-full h-full mx-auto text-center flex flex-col items-center justify-center gap-y-3"
+        class="w-full h-full mx-auto text-center flex flex-col items-center justify-center gap-y-3" transition:animate="slide"
     >
         <h1 class="text-transform-gradient">
             {t("hero.title")}

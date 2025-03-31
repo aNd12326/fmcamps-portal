@@ -39,10 +39,33 @@ const lang = getLangFromUrl(Astro.url);
 		/>
 		<ClientRouter />
 	</head>
-	<body class="antialiased bg-gray-100 text-black dark:bg-black dark:text-white">
+	<body
+		class="antialiased bg-gray-100 text-black dark:bg-black dark:text-white transition-colors duration-300"
+	>
 		<Navbar />
-		<slot />
+		<div id="page-wrapper" class="page-transition-wrapper">
+			<slot />
+		</div>
 		<Footer />
+
+		<script>
+			// Handle page transitions
+			document.addEventListener("astro:page-load", () => {
+				// This runs on initial page load and after each navigation
+				const pageWrapper = document.getElementById("page-wrapper");
+				if (pageWrapper) {
+					pageWrapper.classList.add("page-loaded");
+				}
+			});
+
+			document.addEventListener("astro:before-swap", () => {
+				// This runs before the new page content is swapped in
+				const pageWrapper = document.getElementById("page-wrapper");
+				if (pageWrapper) {
+					pageWrapper.classList.remove("page-loaded");
+				}
+			});
+		</script>
 	</body>
 </html>
 
