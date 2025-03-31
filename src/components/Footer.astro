@@ -4,14 +4,16 @@ import fmcampsWhite from "../assets/logo_ft7.png";
 import Linkedln from "../icons/Linkedln.astro";
 import Facebook from "../icons/Facebook.astro";
 import Github from "../icons/Github.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
+const translatePath = useTranslatedPath(lang);
 ---
 
-<footer class="w-full h-screen lg:h-auto bg-white dark:bg-gray-900 dark:text-gray-100">
+<footer
+    class="w-full h-screen lg:h-auto bg-white dark:bg-gray-900 dark:text-gray-100"
+>
     <div class="max-w-7xl mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8">
         <div>
             <div>
@@ -70,7 +72,9 @@ const t = useTranslations(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.Support")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.support pricing")}</a>
+                        <a class="cursor-pointer" href={translatePath('/price')}
+                            >{t("Footer.support pricing")}</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -78,10 +82,13 @@ const t = useTranslations(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.Company")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.company about")}</a>
+                        <a class="cursor-pointer" href={translatePath('/about')}>{t("Footer.company about")}</a
+                        >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.company contact")}</a>
+                        <a class="cursor-pointer" href={translatePath('/contact')}
+                            >{t("Footer.company contact")}</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -89,16 +96,25 @@ const t = useTranslations(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.legal")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.legal cookies")}</a>
+                        <a class="cursor-pointer" href={translatePath('/cookies')}
+                            >{t("Footer.legal cookies")}</a
+                        >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.legal privacy")}</a>
+                        <a class="cursor-pointer" href={translatePath('/privacy')}>{t("Footer.legal privacy")}</a
+                        >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.legal terms & conditions")}</a>
+                        <a class="cursor-pointer" href={translatePath('/terms-&-conditions')}
+                            >{t("Footer.legal terms & conditions")}</a
+                        >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer">{t("Footer.legal book")}</a>
+                        <a
+                            class="cursor-pointer"
+                            href="https://forms.gle/KrgwQgLwRjUYA5sq8"
+                            target="_blank">{t("Footer.legal book")}</a
+                        >
                     </li>
                 </ul>
             </div>
