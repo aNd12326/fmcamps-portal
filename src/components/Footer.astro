@@ -4,11 +4,11 @@ import fmcampsWhite from "../assets/logo_ft7.png";
 import Linkedln from "../icons/Linkedln.astro";
 import Facebook from "../icons/Facebook.astro";
 import Github from "../icons/Github.astro";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
+// const translatePath = useTranslatedPath(lang);
 ---
 
 <footer
@@ -72,7 +72,7 @@ const translatePath = useTranslatedPath(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.Support")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/price')}
+                        <a class="cursor-pointer" href={`/${lang}/price/`}
                             >{t("Footer.support pricing")}</a
                         >
                     </li>
@@ -82,11 +82,11 @@ const translatePath = useTranslatedPath(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.Company")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/about')}>{t("Footer.company about")}</a
+                        <a class="cursor-pointer" href={`/${lang}/about/`}>{t("Footer.company about")}</a
                         >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/contact')}
+                        <a class="cursor-pointer" href={`/${lang}/contact/`}
                             >{t("Footer.company contact")}</a
                         >
                     </li>
@@ -96,16 +96,16 @@ const translatePath = useTranslatedPath(lang);
                 <h6 class="font-medium text-gray-400">{t("Footer.legal")}</h6>
                 <ul>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/cookies')}
+                        <a class="cursor-pointer" href={`/${lang}/cookies/`}
                             >{t("Footer.legal cookies")}</a
                         >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/privacy')}>{t("Footer.legal privacy")}</a
+                        <a class="cursor-pointer" href={`/${lang}/privacy/`}>{t("Footer.legal privacy")}</a
                         >
                     </li>
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer" href={translatePath('/terms-&-conditions')}
+                        <a class="cursor-pointer" href={`/${lang}/terms-&-conditions`}
                             >{t("Footer.legal terms & conditions")}</a
                         >
                     </li>

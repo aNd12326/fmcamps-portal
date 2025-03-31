@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import aboutImage from "../assets/team-1-800x800Op.jpg";
-import aboutImage2 from "../assets/team-1-800x800_2Op.jpg";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import aboutImage from "../../assets/team-1-800x800Op.jpg";
+import aboutImage2 from "../../assets/team-1-800x800_2Op.jpg";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

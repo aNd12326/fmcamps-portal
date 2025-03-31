@@ -1,4 +1,4 @@
-import { ui, defaultLang, showDefaultLang } from './ui';
+import { ui, defaultLang } from './ui';
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const locales = {
@@ -19,47 +19,13 @@ export function useTranslations(lang: keyof typeof ui) {
   }
 }
 
-export function useTranslatedPath(lang: keyof typeof ui) {
-  return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`
-  }
-}
-
-export function removeLanguagePrefix(url: String){
-
-  const supportedLanguages = ['en', 'br','es'];  // Lista de idiomas soportados
-  
-  const segments = url.split('/');
-
-  // return supportedLanguages.includes(segments[1]) ? 'tiene prefijo' : ''
-
-  if(supportedLanguages.includes(segments[1])){
-    return segments[2]
-  }else{
-    return segments[1]
-  }
-
-  // if (segments[1]) {
-  //   return 'tiene / o /prefijo'
-  // }else if(segments.length >)
-
-  
-
-  // / && /prefijo length = 2
-  // otro > 2
-  
-}
-
 export function getLocalePaths(url: URL) {
-
-  let newUrl = removeLanguagePrefix(url.pathname)
-
-  // console.log(newUrl);
-
   return Object.keys(locales).map((lang) => {
+    console.log(getRelativeLocaleUrl("en","about"));
+
     return {
       lang: lang,
-      path: getRelativeLocaleUrl(lang, newUrl)
+      path: getRelativeLocaleUrl(lang, url.pathname.replace(/^\/[a-zA-Z-]+/, ''))
     }
   });
 }

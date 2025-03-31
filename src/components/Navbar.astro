@@ -5,82 +5,22 @@ import LanguagePicker from "./LanguagePicker.astro";
 import {
     getLangFromUrl,
     useTranslations,
-    useTranslatedPath,
 } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// HIDE DEFAULT LANGUAGE "/ES" FROM URL
-const translatePath = useTranslatedPath(lang);
-
 const url = new URL(Astro.request.url);
 const path = url.pathname;
 ---
-
-<!-- <div
-    class={path === "/" || path === "/en/" || path === "/br/"
-        ? "navbar hidden lg:flex bg-transparent fixed px-4 w-full mx-auto justify-between"
-        : "navbar bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)] fixed px-4 w-full flex mx-auto justify-between "}
->
-    <a href={translatePath("/")} aria-label="Go to homepage" data-astro>
-        <img
-            src={fmcamps.src}
-            alt="logo fmcamps"
-            decoding="async"
-            loading="lazy"
-            width="310"
-            height="95"
-            class="cursor-pointer"
-        />
-    </a>
-    <div class="flex gap-x-10 items-center">
-        <a href={translatePath("/")} data-astro>
-            <svg
-                class="w-6 h-6 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
-                ></path>
-            </svg>
-        </a>
-
-        <a href={translatePath("/about/")} data-astro>
-            {t("nav.about")}
-        </a>
-        <a href={translatePath("/product/")} data-astro>
-            {t("nav.product")}
-        </a>
-        <a href={translatePath("/price/")} data-astro>
-            {t("nav.pricing")}
-        </a>
-        <a href={translatePath("/contact/")} data-astro>
-            {t("nav.contact")}
-        </a>
-
-        <div class="flex gap-x-3 items-center">
-            <LanguagePicker />
-        </div>
-    </div>
-</div> --><!-- mobile -->
 <header class="fixed top-0 z-60 w-full">
     <nav
-        class={path === "/" || path === "/en/" || path === "/br/"
+        class={path === "/es/" || path === "/en/" || path === "/br/"
             ? " mx-auto flex items-center justify-between px-4 pb-0 uppercase lg:px-8 bg-transparent"
             : "mx-auto flex items-center justify-between px-4 pb-0 uppercase lg:px-8 bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)]"}
         id="navbar"
     >
-        <a href={translatePath("/")}>
+        <a href={`/${lang}/`}>
             <img
                 src={fmcamps.src}
                 alt="logo fmcamps"
@@ -93,7 +33,7 @@ const path = url.pathname;
         </a>
 
         <div class="hidden lg:flex gap-x-10 items-center">
-            <a href={translatePath("/")} data-astro>
+            <a href={`/${lang}/`} data-astro>
                 <svg
                     class="w-6 h-6 dark:text-white"
                     aria-hidden="true"
@@ -113,16 +53,16 @@ const path = url.pathname;
                 </svg>
             </a>
 
-            <a href={translatePath("/about/")} data-astro>
+            <a href={`/${lang}/about`} data-astro>
                 {t("nav.about")}
             </a>
-            <a href={translatePath("/service/")} data-astro>
+            <a href={`/${lang}/service`} data-astro>
                 {t("nav.service")}
             </a>
-            <a href={translatePath("/price/")} data-astro>
+            <a href={`/${lang}/price`} data-astro>
                 {t("nav.pricing")}
             </a>
-            <a href={translatePath("/contact/")} data-astro>
+            <a href={`/${lang}/contact`} data-astro>
                 {t("nav.contact")}
             </a>
 
@@ -190,31 +130,31 @@ const path = url.pathname;
             </div>
             <div class="mt-6 space-y-2 transition duration-300 ease-in-out border-r border-r-gray-900">
                 <a
-                    href={translatePath("/")}
+                    href={`/${lang}/`}
                         class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     Home
                 </a>
                 <a
-                    href={translatePath("/about/")}
+                    href={`/${lang}/about`}
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     {t("nav.about")}
                 </a>
                 <a
-                    href={translatePath("/service/")}
+                    href={`/${lang}/service`}
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     {t("nav.service")}
                 </a>
                 <a
-                    href={translatePath("/price/")}
+                    href={`/${lang}/price`}
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     {t("nav.pricing")}
                 </a>
                 <a
-                    href={translatePath("/contact/")}
+                    href={`/${lang}/contact`}
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     {t("nav.contact")}

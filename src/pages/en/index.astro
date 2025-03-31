@@ -13,14 +13,10 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t("layout.Main.title")}>
-	<!-- <Welcome /> -->
 	<div class="hero bg-center bg-cover text-white">
-		<!-- bg-[url(../assets/bgheader.jpg)] bg-cover -->
-		<!-- <Navbar /> -->
 		<Hero />
 	</div>
 	<Experience />
-	<!-- <Footer /> -->
 </Layout>
 
 <style>
@@ -56,7 +52,7 @@ const t = useTranslations(lang);
 
 			// Determinar si estamos en una página de índice
 			const isIndexPage =
-				window.location.pathname === "/" ||
+				window.location.pathname === "/es/" ||
 				window.location.pathname === "/br/" ||
 				window.location.pathname === "/en/";
 

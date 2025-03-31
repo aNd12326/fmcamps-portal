@@ -1,21 +1,9 @@
 ---
-import { languages } from "../i18n/ui";
-import {
-    getLangFromUrl,
-    getLocalePaths,
-    useTranslatedPath,
-} from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+import { getLocalePaths } from "../i18n/utils";
 
 import brasil from "../assets/brasil.png";
 import espania from "../assets/ES.png";
 import usa from "../assets/US.png";
-import { getRelativeLocaleUrl } from "astro:i18n";
-// console.log(Astro.url.pathname);
-
-// console.log(Astro.url.pathname.replace(`/${lang}`, ""));
 
 type FlagMap = {
     br: string;
