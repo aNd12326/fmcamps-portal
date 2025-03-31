@@ -10,12 +10,12 @@ export const ui = {
     es: {
         'layout.Main.title': "FMCAMPS. SaaS para la gestión de sitios",
         'layout.About.title': "Nosotros - FMCAMPS",
-        'layout.Product.title': "Nuestro producto FMCAMPS",
+        'layout.Service.title': "Nuestro servicio FMCAMPS",
         'layout.Price.title': "Planes FMCAMPS",
         'layout.Contact.title': "Contacto a FMCAMPS",
 
         'nav.about': 'Nosotros',
-        'nav.product': 'Producto',
+        'nav.service': 'Servicios',
         'nav.pricing': 'Precios',
         'nav.contact': 'Contacto',
 
@@ -123,12 +123,12 @@ export const ui = {
     en: {
         'layout.Main.title': "FMCAMPS. SaaS for site management",
         "layout.About.title": "About Us - FMCAMPS",
-        'layout.Product.title': "Our Product FMCAMPS",
+        'layout.Service.title': "Our services FMCAMPS",
         'layout.Price.title': "FMCAMPS Plans",
         'layout.Contact.title': "Contact FMCAMPS",
 
         'nav.about': 'About',
-        'nav.product': 'Product',
+        'nav.service': 'Services',
         'nav.pricing': 'Pricing',
         'nav.contact': 'Contact',
 
@@ -235,12 +235,12 @@ export const ui = {
     br: {
         'layout.Main.title': "FMCAMPS. SaaS para gestão de sites",
         "layout.About.title": "Sobre Nós - FMCAMPS",
-        'layout.Product.title': "Nosso Produto FMCAMPS",
+        'layout.Service.title': "Nosso serviços FMCAMPS",
         'layout.Price.title': "Planos FMCAMPS",
         'layout.Contact.title': "Contato FMCAMPS",
 
         'nav.about': 'Nós',
-        'nav.product': 'Produto',
+        'nav.service': 'Serviços',
         'nav.pricing': 'Preços',
         'nav.contact': 'Contato',
 

@@ -116,8 +116,8 @@ const path = url.pathname;
             <a href={translatePath("/about/")} data-astro>
                 {t("nav.about")}
             </a>
-            <a href={translatePath("/product/")} data-astro>
-                {t("nav.product")}
+            <a href={translatePath("/service/")} data-astro>
+                {t("nav.service")}
             </a>
             <a href={translatePath("/price/")} data-astro>
                 {t("nav.pricing")}
@@ -200,6 +200,12 @@ const path = url.pathname;
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
                 >
                     {t("nav.about")}
+                </a>
+                <a
+                    href={translatePath("/service/")}
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold dark:text-gray-100 text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+                >
+                    {t("nav.service")}
                 </a>
                 <a
                     href={translatePath("/price/")}

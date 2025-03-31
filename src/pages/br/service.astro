@@ -1,17 +1,19 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t("layout.Product.title")}>
+<Layout title={t("layout.Service.title")}>
+    <Navbar />
     <section class="w-full pt-36 pb-14">
         <div
             class="bg-white dark:bg-gray-900 rounded-lg flex flex-row items-center content-center py-8 mx-auto leading-6 border-0 border-gray-300 border-solid max-w-7xl px-16"
         >
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
@@ -28,20 +30,20 @@ const t = useTranslations(lang);
                 </div>
             </div>
 
-            <!-- Content -->
+            <!-- Conteúdo -->
             <div
                 class="box-border order-first w-full border-solid md:w-1/2 md:pl-10 md:order-none"
             >
                 <h2
                     class="text-xl font-semibold leading-tight border-0 lg:text-3xl md:text-2xl"
                 >
-                    Work Order Management
+                    Gestão de Ordens de Serviço
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"
                 >
-                    Preventive maintenance, corrective, inspections, additional
-                    and routine.
+                    Manutenção preventiva, corretiva, inspeções, adicionais e
+                    rotineiras.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -51,7 +53,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Maximize productivity and growth
+                        </span> Maximize produtividade e crescimento
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -60,7 +62,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Speed past your competition
+                        </span> Supere sua concorrência
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -69,7 +71,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Learn the top techniques
+                        </span> Aprenda as melhores técnicas
                     </li>
                 </ul>
             </div>
@@ -78,21 +80,21 @@ const t = useTranslations(lang);
         <div
             class="box-border flex flex-col rounded-lg items-center content-center px-8 py-8 mx-auto mt-2 leading-6 border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16"
         >
-            <!-- Section 2 -->
+            <!-- Seção 2 -->
             <div
                 class="box-border w-full border-solid md:w-1/2 md:pl-6 xl:pl-32"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Warehouse Management
+                    Gestão de Estoques
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-10 lg:text-lg"
                 >
-                    Updated stock of materials, tools, and consumables. Valued
-                    inventories by family. Daily, weekly, and monthly Kardex by
-                    location and activity.
+                    Estoque atualizado de materiais, ferramentas e consumíveis.
+                    Inventários avaliados por família. Kardex diário, semanal,
+                    mensal, por localização e atividade.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -102,7 +104,8 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Automated task management workflow
+                        </span> Fluxo de trabalho automatizado de gerenciamento de
+                        tarefas
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -111,7 +114,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Detailed analytics for your data
+                        </span> Análises detalhadas para seus dados
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -120,13 +123,13 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Some awesome integrations
+                        </span> Algumas integrações incríveis
                     </li>
                 </ul>
             </div>
-            <!-- End Content -->
+            <!-- Fim do Conteúdo -->
 
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
@@ -142,11 +145,11 @@ const t = useTranslations(lang);
             </div>
         </div>
 
-        <!--Section 3 -->
+        <!-- Seção 3 -->
         <div
             class="bg-white dark:bg-gray-900 rounded-lg flex flex-col items-center content-center px-8 py-8 mx-auto leading-6 border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16"
         >
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
             >
@@ -161,19 +164,19 @@ const t = useTranslations(lang);
                 />
             </div>
 
-            <!-- Content -->
+            <!-- Conteúdo -->
             <div
                 class="box-border order-first w-full border-solid md:w-1/2 md:pl-10 md:order-none"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Personnel Management
+                    Gestão de Pessoal
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"
                 >
-                    Technicians, supervisors, team leads, and managers.
+                    Técnicos, supervisores, líderes de equipe e gerentes.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -183,7 +186,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Maximize productivity and growth
+                        </span> Maximize produtividade e crescimento
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -192,7 +195,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Speed past your competition
+                        </span> Supere sua concorrência
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -201,31 +204,31 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Learn the top techniques
+                        </span> Aprenda as melhores técnicas
                     </li>
                 </ul>
             </div>
-            <!-- End Content -->
+            <!-- Fim do Conteúdo -->
         </div>
 
-        <!--Section 4 -->
+        <!-- Seção 4 -->
         <div
             class="box-border flex flex-col rounded-lg items-center content-center px-8 py-8 mx-auto mt-2 leading-6 border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16"
         >
-            <!-- Content -->
+            <!-- Conteúdo -->
             <div
                 class="box-border w-full border-solid md:w-1/2 md:pl-6 xl:pl-32"
             >
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Inventory Management
+                    Gestão de Inventário
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-10 lg:text-lg"
                 >
-                    Facilities, equipment, and assets by cost center that
-                    require a life sheet for tracking and control.
+                    Instalações, equipamentos e ativos por centro de custo que
+                    necessitam de ficha de vida para controle e rastreamento.
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -235,7 +238,8 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Automated task management workflow
+                        </span> Fluxo de trabalho automatizado de gerenciamento de
+                        tarefas
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -244,7 +248,7 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Detailed analytics for your data
+                        </span> Análises detalhadas para seus dados
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -253,13 +257,13 @@ const t = useTranslations(lang);
                             class="inline-flex items-center justify-center w-6 h-6 mr-2 bg-yellow-300 rounded-full"
                         >
                             <span class="text-sm font-bold">✓</span>
-                        </span> Some awesome integrations
+                        </span> Algumas integrações incríveis
                     </li>
                 </ul>
             </div>
-            <!-- End Content -->
+            <!-- Fim do Conteúdo -->
 
-            <!-- Image -->
+            <!-- Imagem -->
             <div
                 class="box-border w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
             >
@@ -300,13 +304,13 @@ const t = useTranslations(lang);
                 <h2
                     class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl"
                 >
-                    Water Plant Management
+                    Gestão de Plantas de Água
                 </h2>
                 <p
                     class="pt-4 pb-8 m-0 leading-7 dark:text-gray-200 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"
                 >
-                    Operation and maintenance of potable and wastewater
-                    treatment plants
+                    Operação e manutenção de plantas de tratamento de água
+                    potável e residual
                 </p>
                 <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                     <li
@@ -317,7 +321,7 @@ const t = useTranslations(lang);
                         >
                             <span class="text-sm font-bold">✓</span>
                         </span>{" "}
-                        Daily recording of parameter readings.
+                        Registro diário das leituras de parâmetros.
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -327,7 +331,7 @@ const t = useTranslations(lang);
                         >
                             <span class="text-sm font-bold">✓</span>
                         </span>{" "}
-                        Historical parameter evolution graphs.
+                        Gráficos de evolução histórica dos parâmetros.
                     </li>
                     <li
                         class="box-border py-1 pl-0 text-left dark:text-gray-400 border-solid"
@@ -337,11 +341,13 @@ const t = useTranslations(lang);
                         >
                             <span class="text-sm font-bold">✓</span>
                         </span>{" "}
-                        Configurable alert emission via WhatsApp.
+                        Emissão de alerta configurável via WhatsApp.
                     </li>
                 </ul>
             </div>
         </div>
         <!-- End  Content -->
     </section>
+
+    <!-- <Footer /> -->
 </Layout>
