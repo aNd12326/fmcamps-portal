@@ -21,7 +21,7 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function getLocalePaths(url: URL) {
   return Object.keys(locales).map((lang) => {
-    console.log(getRelativeLocaleUrl("en","about"));
+    // console.log(getRelativeLocaleUrl("en","about"));
 
     return {
       lang: lang,

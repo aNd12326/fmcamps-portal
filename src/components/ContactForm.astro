@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import DataForm from "../components/DataForm";
+import DataForm from "../components/DataForm.svelte";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -208,7 +208,8 @@ const t = useTranslations(lang);
 
                     <!-- https://docs.astro.build/es/reference/directives-reference/ -->
                     <!-- De forma predeterminada, un componente de framework no está hidratado en el cliente. Si no se proporciona la directiva client:*, su HTML se representa en la página sin JavaScript. -->
-                    <DataForm link={Astro.url} client:load/>
+                    <!-- <DataForm link={Astro.url} client:load/> -->
+                     <DataForm client:only="svelte"/>
                 </div>
             </div>
         </div>
