@@ -20,7 +20,7 @@ const path = url.pathname;
             : "mx-auto flex items-center justify-between px-4 pb-0 uppercase lg:px-8 bg-white dark:bg-gray-900 dark:text-gray-100 drop-shadow-md dark:shadow-[0_4px_3px_-5px_rgba(255,255,255,0.7)]"}
         id="navbar"
     >
-        <a href={`/${lang}/`}>
+        <a href={`/${lang}/`} data-astro-prefetch>
             <img
                 src={fmcamps.src}
                 alt="logo fmcamps"
@@ -33,7 +33,7 @@ const path = url.pathname;
         </a>
 
         <div class="hidden lg:flex gap-x-10 items-center">
-            <a href={`/${lang}/`} data-astro>
+            <a href={`/${lang}/`} data-astro-prefetch>
                 <svg
                     class="w-6 h-6 dark:text-white"
                     aria-hidden="true"
@@ -53,16 +53,16 @@ const path = url.pathname;
                 </svg>
             </a>
 
-            <a href={`/${lang}/about`} data-astro>
+            <a href={`/${lang}/about`} data-astro-prefetch>
                 {t("nav.about")}
             </a>
-            <a href={`/${lang}/service`} data-astro>
+            <a href={`/${lang}/service`} data-astro-prefetch>
                 {t("nav.service")}
             </a>
-            <a href={`/${lang}/price`} data-astro>
+            <a href={`/${lang}/price`} data-astro-prefetch>
                 {t("nav.pricing")}
             </a>
-            <a href={`/${lang}/contact`} data-astro>
+            <a href={`/${lang}/contact`} data-astro-prefetch>
                 {t("nav.contact")}
             </a>
 
