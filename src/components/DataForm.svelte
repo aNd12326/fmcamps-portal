@@ -81,6 +81,7 @@
             enviado = true;
 
             try {
+                console.log(formData);
                 // Realizar la llamada fetch a la API
 
                 var myHeaders = new Headers();
@@ -112,87 +113,11 @@
     };
 </script>
 
-<form novalidate on:submit={enviarFormulario}>
-    <div class="mb-4">
-        <label
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            for="email"
-        >Email</label>
-        <input
-            type="email"
-            id="email"
-            bind:value={email}
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
-            required
-        />
-        {#if errors.email}
-            <p role="alert" class="!text-red-500 !text-sm mt-1">
-                {errors.email}
-            </p>
-        {/if}
-    </div>
-
-    <div class="mb-4">
-        <label
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            for="nombres">Nombre</label
-        >
-        <input
-            type="text"
-            id="nombres"
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
-            bind:value={nombres}
-            required
-        />
-        {#if errors.nombres}
-            <p role="alert" class="!text-red-500 !text-sm mt-1">
-                {errors.nombres}
-            </p>
-        {/if}
-    </div>
-
-    <div class="mb-4">
-        <label
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            for="telefono">Telefono</label
-        >
-        <input
-            type="number"
-            id="telefono"
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
-            bind:value={telefono}
-            required
-        />
-        {#if errors.telefono}
-            <p role="alert" class="!text-red-500 !text-sm mt-1">
-                {errors.telefono}
-            </p>
-        {/if}
-    </div>
-
-    <div class="mb-6">
-        <label
-            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            for="mensaje">Mensaje</label
-        >
-        <textarea
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
-            id="mensaje"
-            rows={5}
-            bind:value={mensaje}
-            required
-        ></textarea>
-        {#if errors.mensaje}
-            <p role="alert" class="!text-red-500 !text-sm mt-1">
-                {errors.mensaje}
-            </p>
-        {/if}
-    </div>
-
+<form novalidate on:submit={enviarFormulario} class="h-[588px]">
     {#if enviado}
         <!-- Mostrar la tarjeta de "enviado" -->
         <div
-            class="text-center p-6 text-[#f5f3ff] dark:bg-[#1f263b] rounded-lg"
+            class="text-center p-6 text-[#f5f3ff] dark:bg-[#1f263b] rounded-lg h-full flex flex-col items-center justify-center"
         >
             <svg
                 class="w-12 h-12 mx-auto mb-4 text-[#6f83bd]"
@@ -211,17 +136,95 @@
             <h3
                 class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
             >
-                Formulario Enviado
+                Sent
             </h3>
             <p class="text-gray-600 dark:text-gray-300">
-                Gracias por tu mensaje. Hemos recibido tu formulario y nos
-                pondremos en contacto pronto.
+                Thank you for your message. We've received your form and will be in touch soon.
             </p>
         </div>
     {:else}
+        <div class="mb-4">
+            <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="email">Email</label
+            >
+            <input
+                type="email"
+                id="email"
+                bind:value={email}
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
+                required
+                placeholder="test@hotmail.com"
+            />
+            {#if errors.email}
+                <p role="alert" class="!text-red-500 !text-sm mt-1">
+                    {errors.email}
+                </p>
+            {/if}
+        </div>
+
+        <div class="mb-4">
+            <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="nombres">Name</label
+            >
+            <input
+                type="text"
+                id="nombres"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
+                bind:value={nombres}
+                required
+                placeholder="Juan Lopez"
+            />
+            {#if errors.nombres}
+                <p role="alert" class="!text-red-500 !text-sm mt-1">
+                    {errors.nombres}
+                </p>
+            {/if}
+        </div>
+
+        <div class="mb-4">
+            <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="telefono">Phone</label
+            >
+            <input
+                type="number"
+                id="telefono"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
+                bind:value={telefono}
+                required
+                placeholder="+51 994 434 434"
+            />
+            {#if errors.telefono}
+                <p role="alert" class="!text-red-500 !text-sm mt-1">
+                    {errors.telefono}
+                </p>
+            {/if}
+        </div>
+
+        <div class="mb-6">
+            <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="mensaje">Message</label
+            >
+            <textarea
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-[#8bdefa]"
+                id="mensaje"
+                rows={5}
+                bind:value={mensaje}
+                required
+                placeholder="Hi! Enter your message here..."
+            ></textarea>
+            {#if errors.mensaje}
+                <p role="alert" class="!text-red-500 !text-sm mt-1">
+                    {errors.mensaje}
+                </p>
+            {/if}
+        </div>
         <button
             type="submit"
-            class="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none bg-gray-900 hover:bg-gray-800 text-white shadow-md hover:shadow-lg cursor-pointer"
+            class="w-full btn-primary"
             >Enviar</button
         >
     {/if}

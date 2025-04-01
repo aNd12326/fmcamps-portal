@@ -35,11 +35,15 @@ button {
     @apply dark:text-gray-200;
 }
 
-/* .btn-primary {
-    @apply btn bg-accent-400 hover:bg-accent-500 text-black shadow-md hover:shadow-lg;
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none;
 }
 
-.btn-secondary {
+.btn-primary {
+    @apply cursor-pointer inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none bg-[#e6ee54] hover:bg-[#b3b661] text-black shadow-md hover:shadow-lg;
+}
+
+/* .btn-secondary {
     @apply btn bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg;
 } */
 
