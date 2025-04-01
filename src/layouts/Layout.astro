@@ -75,7 +75,7 @@ const lang = getLangFromUrl(Astro.url);
 			rel="stylesheet"
 		/>
 
-		<script>
+		<script is:inline>
 			// Añadir el script de seguimiento de LinkedIn
 			const linkedInScript = document.createElement("script");
 			linkedInScript.src =
