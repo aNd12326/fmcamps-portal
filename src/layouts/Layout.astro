@@ -24,6 +24,9 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
 	<head>
+		<!-- SEO -->
+		<link rel="canonical" href={Astro.url} />
+
 		<!-- Meta tags importantes -->
 
 		<meta charset="UTF-8" />
@@ -34,11 +37,8 @@ const lang = getLangFromUrl(Astro.url);
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 		<!-- Meta descripción (necesaria para todos los sitios) -->
-		<meta
-			name={title}
-			content={description}
-		/>
-		
+		<meta name={title} content={description} />
+
 		<meta
 			name="keywords"
 			content="facilities ,management ,maintenance ,camp ,miner ,mining ,site ,management"
@@ -60,10 +60,7 @@ const lang = getLangFromUrl(Astro.url);
 
 		<!-- Twitter Card (para mejorar la visibilidad en Twitter) -->
 		<meta name="twitter:title" content="FMCAMPS" />
-		<meta
-			name="twitter:description"
-			content={description}
-		/>
+		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="../assets/logo_ftOp.webp" />
 		<meta name="twitter:card" content="summary_large_image" />
 
