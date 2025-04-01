@@ -16,6 +16,8 @@ const flags: FlagMap = {
     es: espania.src, // Español -> España
     en: usa.src, // Inglés -> Estados Unidos
 };
+
+const flagPath = Astro.url.pathname;
 ---
 
 <!-- pasar dinamicamente los lenguajes 
@@ -35,11 +37,25 @@ href={:/br/contact} brazil
         getLocalePaths(Astro.url).map(({ lang, path }) => {
             let banderas = flags[lang as keyof FlagMap];
             // console.log(banderas);
+            // console.log(lang);
+            // console.log("getting prefix", flagPath.split("/")[1]);
+            const currentLangFlag = flagPath.split("/")[1];
+
+            // Filtra las banderas para excluir la bandera del idioma actual
+            const availableLanguages = Object.keys(flags).filter(
+                (language) => language !== currentLangFlag,
+            );
 
             return (
-                <a href={path}>
-                    <img src={banderas} alt="" />
-                </a>
+                // <a href={path}>
+                //     <img src={banderas} alt="" />
+                // </a>
+
+                availableLanguages.includes(lang) && (
+                    <a href={path}>
+                        <img src={banderas} alt={`Bandera de ${lang}`} />
+                    </a>
+                )
             );
         })
     }
