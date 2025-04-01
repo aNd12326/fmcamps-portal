@@ -19,13 +19,15 @@ const { title, description = "FMCAMPS. SaaS para la gestión de Sitios" } =
 	Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+
+const canonicalUrl = Astro.request.url; // Obtiene la URL de la página actual
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
 		<!-- SEO -->
-		<link rel="canonical" href={Astro.url} />
+		<link rel="canonical" href={canonicalUrl} />
 
 		<!-- Meta tags importantes -->
 
