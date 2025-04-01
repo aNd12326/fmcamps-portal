@@ -15,10 +15,8 @@ export interface Props {
 	description?: string;
 }
 
-const {
-	title,
-	description = "FMCAMPS. SaaS para la gestión de Sitios",
-} = Astro.props;
+const { title, description = "FMCAMPS. SaaS para la gestión de Sitios" } =
+	Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -26,11 +24,49 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
 	<head>
+		<!-- Meta tags importantes -->
+
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!-- Meta descripción (necesaria para todos los sitios) -->
+		<meta
+			name={title}
+			content={description}
+		/>
+		
+		<meta
+			name="keywords"
+			content="facilities ,management ,maintenance ,camp ,miner ,mining ,site ,management"
+		/>
+		<meta
+			name="keywords"
+			content="instalaciones ,gestión ,mantenimiento ,campamento ,minero ,mineria ,sitio ,gestion"
+		/>
+
+		<!-- Etiqueta de autor -->
+		<meta name="author" content="FMCAMPS" />
+
+		<!-- Etiquetas Open Graph para compartir en redes sociales -->
+		<meta property="og:title" content="FMCAMPS" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="../assets/logo_ftOp.webp" />
+		<meta property="og:url" content="https://www.fmcamps.com/" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card (para mejorar la visibilidad en Twitter) -->
+		<meta name="twitter:title" content="FMCAMPS" />
+		<meta
+			name="twitter:description"
+			content={description}
+		/>
+		<meta name="twitter:image" content="../assets/logo_ftOp.webp" />
+		<meta name="twitter:card" content="summary_large_image" />
+
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com/" />
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -38,6 +74,23 @@ const lang = getLangFromUrl(Astro.url);
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
+
+		<script>
+			// Añadir el script de seguimiento de LinkedIn
+			const linkedInScript = document.createElement("script");
+			linkedInScript.src =
+				"https://snap.licdn.com/li.lms-analytics/insight.min.js";
+			linkedInScript.async = true;
+			document.head.appendChild(linkedInScript);
+
+			// Añadir el píxel de seguimiento para aquellos usuarios que tengan JavaScript desactivado
+			const linkedInPixel = document.createElement("img");
+			linkedInPixel.src =
+				"https://px.ads.linkedin.com/collect/?pid=5688169&fmt=gif";
+			linkedInPixel.style.display = "none";
+			document.body.appendChild(linkedInPixel);
+		</script>
+
 		<ClientRouter />
 	</head>
 	<body
