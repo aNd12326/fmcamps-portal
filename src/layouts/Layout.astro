@@ -11,120 +11,145 @@ import { ClientRouter } from "astro:transitions";
 // View transitions update your page content without the browser’s normal, full-page navigation refresh and provide seamless animations between pages.
 
 export interface Props {
-	title: string;
-	description?: string;
+  title: string;
+  description?: string;
 }
 
 const { title, description = "FMCAMPS. SaaS para la gestión de Sitios" } =
-	Astro.props;
+  Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<!-- SEO -->
-		<link rel="canonical" href="https://www.fmcamps.com/en/" />
+  <head>
+    <!-- SEO -->
+    <link rel="canonical" href="https://www.fmcamps.com/en/" />
 
-		<!-- Meta tags importantes -->
+    <!-- Meta tags importantes -->
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<!-- Meta descripción (necesaria para todos los sitios) -->
-		<meta name={title} content={description} />
+    <!-- Meta descripción (necesaria para todos los sitios) -->
+    <meta name={title} content={description} />
 
-		<meta
-			name="keywords"
-			content="facilities ,management ,maintenance ,camp ,miner ,mining ,site ,management"
-		/>
-		<meta
-			name="keywords"
-			content="instalaciones ,gestión ,mantenimiento ,campamento ,minero ,mineria ,sitio ,gestion"
-		/>
+    <meta
+      name="keywords"
+      content="facilities ,management ,maintenance ,camp ,miner ,mining ,site ,management"
+    />
+    <meta
+      name="keywords"
+      content="instalaciones ,gestión ,mantenimiento ,campamento ,minero ,mineria ,sitio ,gestion"
+    />
 
-		<!-- Etiqueta de autor -->
-		<meta name="author" content="FMCAMPS" />
+    <!-- Etiqueta de autor -->
+    <meta name="author" content="FMCAMPS" />
 
-		<!-- Etiquetas Open Graph para compartir en redes sociales -->
-		<meta property="og:title" content="FMCAMPS" />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content="../assets/logo_ftOp.webp" />
-		<meta property="og:url" content="https://www.fmcamps.com/" />
-		<meta property="og:type" content="website" />
+    <!-- Etiquetas Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="FMCAMPS" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="../assets/logo_ftOp.webp" />
+    <meta property="og:url" content="https://www.fmcamps.com/" />
+    <meta property="og:type" content="website" />
 
-		<!-- Twitter Card (para mejorar la visibilidad en Twitter) -->
-		<meta name="twitter:title" content="FMCAMPS" />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="../assets/logo_ftOp.webp" />
-		<meta name="twitter:card" content="summary_large_image" />
+    <!-- Twitter Card (para mejorar la visibilidad en Twitter) -->
+    <meta name="twitter:title" content="FMCAMPS" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="../assets/logo_ftOp.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com/" />
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-		<script is:inline>
-			// Añadir el script de seguimiento de LinkedIn
-			const linkedInScript = document.createElement("script");
-			linkedInScript.src =
-				"https://snap.licdn.com/li.lms-analytics/insight.min.js";
-			linkedInScript.async = true;
-			document.head.appendChild(linkedInScript);
+    <script is:inline>
+      // Añadir el script de seguimiento de LinkedIn
+      const linkedInScript = document.createElement("script");
+      linkedInScript.src =
+        "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      linkedInScript.async = true;
+      document.head.appendChild(linkedInScript);
 
-			// Añadir el píxel de seguimiento para aquellos usuarios que tengan JavaScript desactivado
-			const linkedInPixel = document.createElement("img");
-			linkedInPixel.src =
-				"https://px.ads.linkedin.com/collect/?pid=5688169&fmt=gif";
-			linkedInPixel.style.display = "none";
-			document.body.appendChild(linkedInPixel);
-		</script>
+      // Añadir el píxel de seguimiento para aquellos usuarios que tengan JavaScript desactivado
+      const linkedInPixel = document.createElement("img");
+      linkedInPixel.src =
+        "https://px.ads.linkedin.com/collect/?pid=5688169&fmt=gif";
+      linkedInPixel.style.display = "none";
+      document.body.appendChild(linkedInPixel);
+    </script>
 
-		<ClientRouter />
-	</head>
-	<body
-		class="antialiased bg-gray-100 text-black dark:bg-black dark:text-white transition-colors duration-300"
-	>
-		<Navbar />
-		<div id="page-wrapper" class="page-transition-wrapper">
-			<slot />
-		</div>
-		<Footer />
+    <ClientRouter />
+  </head>
+  <body
+    class="antialiased bg-gray-100 text-black dark:bg-black dark:text-white transition-colors duration-300"
+  >
+    <Navbar />
+    <div id="page-wrapper" class="page-transition-wrapper">
+      <slot />
+    </div>
+    <Footer />
 
-		<script>
-			// Handle page transitions
-			document.addEventListener("astro:page-load", () => {
-				// This runs on initial page load and after each navigation
-				const pageWrapper = document.getElementById("page-wrapper");
-				if (pageWrapper) {
-					pageWrapper.classList.add("page-loaded");
-				}
-			});
+    <script>
+      // Handle page transitions
+      document.addEventListener("astro:page-load", () => {
+        // This runs on initial page load and after each navigation
+        const pageWrapper = document.getElementById("page-wrapper");
+        if (pageWrapper) {
+          pageWrapper.classList.add("page-loaded");
+        }
+      });
 
-			document.addEventListener("astro:before-swap", () => {
-				// This runs before the new page content is swapped in
-				const pageWrapper = document.getElementById("page-wrapper");
-				if (pageWrapper) {
-					pageWrapper.classList.remove("page-loaded");
-				}
-			});
-		</script>
-	</body>
+      document.addEventListener("astro:before-swap", () => {
+        // This runs before the new page content is swapped in
+        const pageWrapper = document.getElementById("page-wrapper");
+        if (pageWrapper) {
+          pageWrapper.classList.remove("page-loaded");
+        }
+      });
+    </script>
+
+    <script>
+      import { CHATWOOT_API_TOKEN } from "astro:env/client";
+      console.log(CHATWOOT_API_TOKEN);
+      window.chatwootSettings = {
+        position: "right",
+        type: "expanded_bubble",
+        launcherTitle: "Chatea con nosotros",
+      };
+      (function (d, t) {
+        var BASE_URL = "https://app.chatwoot.com";
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: CHATWOOT_API_TOKEN,
+            baseUrl: BASE_URL,
+          });
+        };
+      })(document, "script");
+    </script>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

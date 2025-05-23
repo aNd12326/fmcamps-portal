@@ -29,7 +29,8 @@ export default defineConfig({
 
   env: {
     schema: {
-      PRIVATE_FORM_URL: envField.string({ context: 'client', access: 'public' })
+      PRIVATE_FORM_URL: envField.string({ context: 'client', access: 'public' }),
+      CHATWOOT_API_TOKEN : envField.string({ context: 'client', access: 'public' }),
     }
   },
 
